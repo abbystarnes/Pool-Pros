@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const data = require("./dealers.json");
 
-// set the view engine to ejs
+
 app.set('view engine', 'ejs');
 
-// index page
+
 app.get('/', function(req, res) {
+    console.log(data);
     res.render('pages/index');
 });
 
