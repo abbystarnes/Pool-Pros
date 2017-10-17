@@ -13,6 +13,30 @@
 body {
   font-family: 'Open Sans', Arial, sans-serif; }
 
+.overlay {
+  transition: all .25s ease-in;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block; }
+
+.hamburger {
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  color: #01529e;
+  background-color: white;
+  padding: 15px 16.5px;
+  border-radius: 30px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7); }
+
 .nav {
   transition: all .25s ease-in;
   opacity: 1;
