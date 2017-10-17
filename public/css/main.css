@@ -10,6 +10,10 @@
   font-weight: bold;
   src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
 
+.wrapper-inner {
+  max-width: 1440px;
+  margin: 0 auto; }
+
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   background-image: url("../img/water-image.png");
@@ -220,17 +224,19 @@ ul {
   font-size: .75em;
   padding-top: 1em;
   padding-bottom: 1em; }
-  .footer-2 ul li {
-    display: inline;
-    padding-right: .75em;
-    border-right: 1px solid white;
-    padding-left: .5em;
-    margin: 0; }
-    .footer-2 ul li:last-child {
-      padding-right: 0;
-      border: none; }
-    .footer-2 ul li a {
-      transition: all .25s ease-in-out; }
-      .footer-2 ul li a:active, .footer-2 ul li a:focus {
-        transition: all .25s ease-in-out;
-        color: #efefef; }
+  .footer-2 ul {
+    padding-left: 0; }
+    .footer-2 ul li {
+      display: inline;
+      padding-right: .75em;
+      border-right: 1px solid white;
+      padding-left: .5em;
+      margin: 0; }
+      .footer-2 ul li:last-child {
+        padding-right: 0;
+        border: none; }
+      .footer-2 ul li a {
+        transition: all .25s ease-in-out; }
+        .footer-2 ul li a:active, .footer-2 ul li a:focus {
+          transition: all .25s ease-in-out;
+          color: #efefef; }

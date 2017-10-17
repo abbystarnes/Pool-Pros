@@ -24,6 +24,11 @@ $lt-grey-hov: #efefef;
   src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Bold.tff') format('tff');
 }
 
+.wrapper-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   background-image: url('../img/water-image.png');
@@ -287,6 +292,7 @@ ul {
   padding-top: 1em;
   padding-bottom: 1em;
   ul {
+    padding-left: 0;
     li {
       display: inline;
       padding-right: .75em;

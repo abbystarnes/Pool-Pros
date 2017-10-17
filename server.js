@@ -8,8 +8,11 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function(req, res) {
-    console.log(data);
-    res.render('pages/index');
+
+    console.log(data.dealers[0]);
+    res.render('pages/index', {
+      data: data
+    });
 });
 
 app.listen(port, function() {
