@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Semibold.tff") format("tff"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif; }
+
+.nav {
+  transition: all .25s ease-in;
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  border-top: 5px solid #0bc9c8;
+  border-bottom: 5px solid #0bc9c8;
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29); }
+  .nav h3 {
+    margin-top: 2.938em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.125em;
+    text-align: center;
+    margin-bottom: 2.188em;
+    color: #01529e; }
+  .nav button {
+    transition: all .25s ease-in-out;
+    padding: 5px 7px;
+    margin: 0;
+    position: absolute;
+    right: calc(7% - 7px);
+    top: calc(1.5em - 5px);
+    border: none;
+    font-size: 1.1em;
+    background-color: white;
+    color: #0bc9c8; }
+    .nav button:focus i, .nav button:active i {
+      transition: all .25s ease-in-out;
+      color: #0badac; }
+  .nav ul {
+    padding-left: 0;
+    margin: 0; }
+  .nav li {
+    border-bottom: 2px solid white;
+    list-style-type: none;
+    background-color: #f6f6f6; }
+    .nav li:last-child {
+      border-bottom: none; }
+    .nav li a {
+      transition: all .25s ease-in-out;
+      background-color: #f6f6f6;
+      position: relative;
+      display: block;
+      padding: 1.875em 0;
+      padding-left: 7%;
+      text-decoration: none;
+      color: #616161;
+      font-size: 1.125em;
+      font-weight: 600; }
+      .nav li a:focus {
+        transition: all .25s ease-in-out;
+        background-color: #efefef; }
+      .nav li a:active {
+        transition: all .25s ease-in-out;
+        color: #393939; }
+        .nav li a:active i {
+          transition: all .25s ease-in-out;
+          color: #0badac; }
+      .nav li a i {
+        transition: all .25s ease-in-out;
+        color: #0bc9c8;
+        position: absolute;
+        right: 7%;
+        font-size: 1.1em;
+        margin-top: 1.5px; }
+
+.hidden {
+  transition: all .25s ease-out;
+  opacity: 0;
+  visibility: hidden; }

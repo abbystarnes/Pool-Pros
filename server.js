@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const data = require("./dealers.json");
 
-
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 
