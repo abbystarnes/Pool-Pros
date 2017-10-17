@@ -4,6 +4,7 @@ $white: #fff;
 $grey: #616161;
 $grey-active: #393939;
 $blue: #01529e;
+$blue-light: #1E63DA;
 $teal: #0bc9c8;
 $teal-active: #0badac;
 $lt-grey: #f6f6f6;
@@ -25,6 +26,20 @@ $lt-grey-hov: #efefef;
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
+  background-image: url('../img/water-image.png');
+  background-repeat: no-repeat;
+  background-position: top 2.5em center;
+  min-height: 100%;
+}
+
+ul {
+  margin: 0;
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .overlay {
@@ -43,16 +58,16 @@ body {
 
 .hamburger {
   position: absolute;
-  right: .5em;
-  top: .5em;
-  color: $blue;
-  background-color: $white;
-  padding: 15px 16.5px;
-  border-radius: 30px;
+  right: .25em;
+  top: .25em;
+  height: 58px;
+  width: 58px;
+  background-image: url('../img/menu-icon-mobile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
   border: none;
-  -webkit-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.7);
-  -moz-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.7);
-  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.7);
 }
 
 .nav {
@@ -63,6 +78,7 @@ body {
   width: 100%;
   height: auto;
   top: 0;
+  left:0;
   border-top: 5px solid $teal;
   border-bottom: 5px solid $teal;
   background-color: $white;
@@ -108,6 +124,10 @@ body {
       border-bottom: none;
     }
     a {
+      background-image: url('../img/next-arrow.png');
+      background-size: 13px 16px;
+      background-repeat: no-repeat;
+      background-position: right 1.875em center;
       transition: all .25s ease-in-out;
       background-color: $lt-grey;
       position:relative;
@@ -142,8 +162,148 @@ body {
   }
 }
 
+// headers
+
+.header-1 {
+  display: none;
+}
+
+.header-2 {
+  .logo {
+    height: 1.75em;
+  }
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: .6875em;
+  padding-bottom: .6875em;
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+  background-color: $white;
+}
+
 .hidden {
   transition: all .25s ease-out;
   opacity: 0;
   visibility: hidden;
+}
+
+// buttons
+
+.btn {
+  transition: all .25s ease-in-out;
+  background-color: transparent;
+  padding: .44em .6875em;
+  padding-top: calc(.44em + 3px);
+  border: 1px solid $blue-light;
+  border-radius: 3px;
+  font-size: .6875em;
+  text-transform: uppercase;
+  font-weight: bold;
+  vertical-align: top;
+  color: $blue-light;
+
+  &:active, &:focus {
+    transition: all .25s ease-in-out;
+    background-color: $lt-grey-hov;
+  }
+}
+
+.btn-find-a-pro {
+  float: right;
+  margin-right: calc(58px + .25em);
+}
+
+.icon-location {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -2px;
+  background-image: url('../img/location-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+// footers
+.footer {
+  color: $white;
+  a {
+    color: $white;
+  }
+  text-align: center;
+
+}
+.footer-1 {
+  padding-top: 2.25em;
+  padding-bottom: 1em;
+  background-color: $blue;
+  .logo {
+    height: 26px;
+    width: 188px;
+    margin-bottom: .5em;
+  }
+  .icon-footer {
+  }
+  .icon-twitter {
+    width: 22px;
+    height: 18px;
+  }
+  .icon-facebook {
+    width: 12px;
+    height: 23px;
+  }
+  .icon-youtube {
+    width: 21px;
+    height: 25px;
+  }
+  .connect {
+    font-size: .938em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 1.5em;
+  }
+  .list-social {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: text-bottom;
+    li {
+      display: inline;
+      margin-right: .5em;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:active, &:focus {
+      }
+    }
+  }
+
+}
+.footer-2 {
+  background-color: $blue-light;
+  font-size: .75em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  ul {
+    li {
+      display: inline;
+      padding-right: .75em;
+      border-right: 1px solid $white;
+      padding-left: .5em;
+      margin: 0;
+      &:last-child {
+        padding-right: 0;
+        border: none;
+      }
+      a {
+        transition: all .25s ease-in-out;
+        &:active, &:focus {
+          transition: all .25s ease-in-out;
+          color: $lt-grey-hov;
+        }
+      }
+    }
+  }
 }

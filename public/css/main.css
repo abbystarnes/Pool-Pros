@@ -11,7 +11,18 @@
   src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
 
 body {
-  font-family: 'Open Sans', Arial, sans-serif; }
+  font-family: 'Open Sans', Arial, sans-serif;
+  background-image: url("../img/water-image.png");
+  background-repeat: no-repeat;
+  background-position: top 2.5em center;
+  min-height: 100%; }
+
+ul {
+  margin: 0; }
+  ul li {
+    list-style-type: none; }
+  ul a {
+    text-decoration: none; }
 
 .overlay {
   transition: all .25s ease-in;
@@ -26,16 +37,16 @@ body {
 
 .hamburger {
   position: absolute;
-  right: .5em;
-  top: .5em;
-  color: #01529e;
-  background-color: white;
-  padding: 15px 16.5px;
-  border-radius: 30px;
-  border: none;
-  -webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.7); }
+  right: .25em;
+  top: .25em;
+  height: 58px;
+  width: 58px;
+  background-image: url("../img/menu-icon-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  border: none; }
 
 .nav {
   transition: all .25s ease-in;
@@ -45,6 +56,7 @@ body {
   width: 100%;
   height: auto;
   top: 0;
+  left: 0;
   border-top: 5px solid #0bc9c8;
   border-bottom: 5px solid #0bc9c8;
   background-color: white;
@@ -83,6 +95,10 @@ body {
     .nav li:last-child {
       border-bottom: none; }
     .nav li a {
+      background-image: url("../img/next-arrow.png");
+      background-size: 13px 16px;
+      background-repeat: no-repeat;
+      background-position: right 1.875em center;
       transition: all .25s ease-in-out;
       background-color: #f6f6f6;
       position: relative;
@@ -110,7 +126,111 @@ body {
         font-size: 1.1em;
         margin-top: 1.5px; }
 
+.header-1 {
+  display: none; }
+
+.header-2 {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: .6875em;
+  padding-bottom: .6875em;
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+  background-color: white; }
+  .header-2 .logo {
+    height: 1.75em; }
+
 .hidden {
   transition: all .25s ease-out;
   opacity: 0;
   visibility: hidden; }
+
+.btn {
+  transition: all .25s ease-in-out;
+  background-color: transparent;
+  padding: .44em .6875em;
+  padding-top: calc(.44em + 3px);
+  border: 1px solid #1e63da;
+  border-radius: 3px;
+  font-size: .6875em;
+  text-transform: uppercase;
+  font-weight: bold;
+  vertical-align: top;
+  color: #1e63da; }
+  .btn:active, .btn:focus {
+    transition: all .25s ease-in-out;
+    background-color: #efefef; }
+
+.btn-find-a-pro {
+  float: right;
+  margin-right: calc(58px + .25em); }
+
+.icon-location {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -2px;
+  background-image: url("../img/location-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.footer {
+  color: white;
+  text-align: center; }
+  .footer a {
+    color: white; }
+
+.footer-1 {
+  padding-top: 2.25em;
+  padding-bottom: 1em;
+  background-color: #01529e; }
+  .footer-1 .logo {
+    height: 26px;
+    width: 188px;
+    margin-bottom: .5em; }
+  .footer-1 .icon-twitter {
+    width: 22px;
+    height: 18px; }
+  .footer-1 .icon-facebook {
+    width: 12px;
+    height: 23px; }
+  .footer-1 .icon-youtube {
+    width: 21px;
+    height: 25px; }
+  .footer-1 .connect {
+    font-size: .938em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 1.5em; }
+  .footer-1 .list-social {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: text-bottom; }
+    .footer-1 .list-social li {
+      display: inline;
+      margin-right: .5em; }
+      .footer-1 .list-social li:last-child {
+        margin-right: 0; }
+
+.footer-2 {
+  background-color: #1e63da;
+  font-size: .75em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .footer-2 ul li {
+    display: inline;
+    padding-right: .75em;
+    border-right: 1px solid white;
+    padding-left: .5em;
+    margin: 0; }
+    .footer-2 ul li:last-child {
+      padding-right: 0;
+      border: none; }
+    .footer-2 ul li a {
+      transition: all .25s ease-in-out; }
+      .footer-2 ul li a:active, .footer-2 ul li a:focus {
+        transition: all .25s ease-in-out;
+        color: #efefef; }
