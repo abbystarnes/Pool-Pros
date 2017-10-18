@@ -53,6 +53,7 @@ ul {
   border: none; }
 
 .nav {
+  z-index: 2;
   transition: all .25s ease-in;
   opacity: 1;
   visibility: visible;
@@ -155,13 +156,13 @@ ul {
   background-color: transparent;
   padding: .44em .6875em;
   padding-top: calc(.44em + 3px);
-  border: 1px solid #1e63da;
+  border: 1px solid #216ddf;
   border-radius: 3px;
   font-size: .6875em;
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: top;
-  color: #1e63da; }
+  color: #216ddf; }
   .btn:active, .btn:focus {
     transition: all .25s ease-in-out;
     background-color: #efefef; }
@@ -220,7 +221,7 @@ ul {
         margin-right: 0; }
 
 .footer-2 {
-  background-color: #1e63da;
+  background-color: #216ddf;
   font-size: .75em;
   padding-top: 1em;
   padding-bottom: 1em; }
@@ -240,3 +241,85 @@ ul {
         .footer-2 ul li a:active, .footer-2 ul li a:focus {
           transition: all .25s ease-in-out;
           color: #efefef; }
+
+.filter-bar {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 7em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center; }
+  .filter-bar .zip-blurb {
+    color: #216ddf;
+    font-weight: bold;
+    font-size: 1.125em;
+    margin: 0;
+    padding-bottom: 1em;
+    position: relative; }
+    .filter-bar .zip-blurb:after {
+      content: '';
+      width: 95%;
+      left: 2.5%;
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      background-color: #efefef; }
+  .filter-bar .title-filter {
+    color: #616161;
+    font-weight: bold;
+    font-size: 1.125em;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em; }
+  .filter-bar .checkboxes-filter {
+    margin: 0 auto;
+    display: inline-block;
+    padding-left: 0; }
+    .filter-bar .checkboxes-filter li {
+      font-size: .75em;
+      color: #616161;
+      text-align: left;
+      margin-bottom: 1em; }
+      .filter-bar .checkboxes-filter li input {
+        margin-right: .5em;
+        -webkit-appearance: none;
+        border: 1px solid #d8d8d8;
+        border-radius: 6px;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        vertical-align: middle; }
+      .filter-bar .checkboxes-filter li input:checked {
+        border: 8px inset #216ddf;
+        border-style: solid inset solid solid; }
+      .filter-bar .checkboxes-filter li:last-child {
+        margin-bottom: 0; }
+  .filter-bar .btn-tooltip {
+    margin-left: .75em;
+    position: relative;
+    border-radius: 2px;
+    text-align: center;
+    background-color: #d8d8d8;
+    color: #216ddf;
+    padding: 4px 7.15px;
+    border: none;
+    vertical-align: middle;
+    transition: all .25s ease-in-out; }
+    .filter-bar .btn-tooltip:hover, .filter-bar .btn-tooltip:active, .filter-bar .btn-tooltip:focus {
+      background-color: #a7a7a7;
+      transition: all .25s ease-in-out; }
+      .filter-bar .btn-tooltip:hover::after, .filter-bar .btn-tooltip:active::after, .filter-bar .btn-tooltip:focus::after {
+        content: 'Sed at utamur petentium, facilisis repudiare nec eu.';
+        transition: all .25s ease-in-out;
+        width: 100px;
+        position: absolute;
+        background-color: white;
+        padding: 1em;
+        left: 0px;
+        top: 2.5em;
+        border: 1px solid #216ddf;
+        border-radius: 3px; }
+  .filter-bar .tooltip {
+    display: none; }

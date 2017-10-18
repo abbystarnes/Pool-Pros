@@ -1,17 +1,15 @@
-<section>
-  <div>
-    <p>
+<section class="wrapper-inner">
+  <div class="filter-bar">
+    <p class="zip-blurb">
       <%= data.dealers.length %> dealers in
         <%= data.zipcode %>
     </p>
-    <h4>Filter Results</h4>
-    <ul>
+    <h4 class="title-filter">Filter Results</h4>
+    <ul class='checkboxes-filter'>
       <li><label for="service"><input type="checkbox">Service</label></li>
       <li><label for="installation"><input type="checkbox">Installation</label></li>
       <li><label for="residential"><input type="checkbox">Residential</label></li>
-      <li><label for="commercial"><input type="checkbox">Commercial</label></li>
-      <button class="btn-tooltip">?</button>
-      <div class="tooltip">Info about Commercial?</div>
+      <li><label for="commercial"><input type="checkbox">Commercial<button id='btn-dealer-tooltip' class="btn-tooltip">?</button></label></li>
     </ul>
   </div>
   <div>
@@ -25,12 +23,15 @@
         <button>Contact this Pro</button>
         <h4>Business Hours</h4>
         <ul>
-          <% for (day in data.dealers[dealer].data.weekHours) { %>
-            <li>
-              <%= day%>
-                <%= data.dealers[dealer].data.weekHours[day]%>
-            </li>
-            <% } %>
+          <li>Weekdays
+            <%= data.dealers[dealer].data.weekHours['mon']%>
+          </li>
+          <li>Saturdays
+            <%= data.dealers[dealer].data.weekHours['sat'] ? data.dealers[dealer].data.weekHours['sat'] : 'CLOSED' %>
+          </li>
+          <li>Sundays
+            <%= data.dealers[dealer].data.weekHours['sun'] ? data.dealers[dealer].data.weekHours['sun'] : 'CLOSED' %>
+          </li>
         </ul>
         <div>
           <% for (let x = 0; x < data.dealers[dealer].data.certifications.length; x++) { %>

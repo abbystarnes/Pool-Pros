@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
 
-    console.log(data.dealers[0]);
+    console.log(data);
     res.render('pages/index', {
       data: data
     });
