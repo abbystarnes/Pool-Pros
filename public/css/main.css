@@ -474,7 +474,7 @@ ul {
       .dealer-cards .card .service-types .service-icon {
         vertical-align: bottom;
         height: 1em; }
-  .dealer-cards .show-Installation, .dealer-cards .show-Commercial, .dealer-cards .show-Service, .dealer-cards .show-Residential {
+  .dealer-cards .show-card {
     display: block; }
 
 /*

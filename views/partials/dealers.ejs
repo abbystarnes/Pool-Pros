@@ -6,15 +6,15 @@
     </p>
     <h4 class="title-filter">Filter Results</h4>
     <ul class='checkboxes-filter'>
-      <li><label for="service"><input data-certifications='Service' class='checkbox' type="checkbox">Service</label></li>
-      <li><label for="installation"><input data-certifications='Installation' class='checkbox' type="checkbox">Installation</label></li>
-      <li><label for="residential"><input data-certifications='Residential' class='checkbox' type="checkbox">Residential</label></li>
-      <li><label for="commercial"><input data-certifications='Commercial' class='checkbox' type="checkbox">Commercial<button id='btn-dealer-tooltip' class="btn-tooltip">?</button></label></li>
+      <li><label for="service"><input data-certification='Service' class='checkbox' type="checkbox">Service</label></li>
+      <li><label for="installation"><input data-certification='Installation' class='checkbox' type="checkbox">Installation</label></li>
+      <li><label for="residential"><input data-certification='Residential' class='checkbox' type="checkbox">Residential</label></li>
+      <li><label for="commercial"><input data-certification='Commercial' class='checkbox' type="checkbox">Commercial<button id='btn-dealer-tooltip' class="btn-tooltip">?</button></label></li>
     </ul>
   </div>
   <div class='dealer-cards'>
     <% for (dealer in data.dealers) { %>
-      <div class="card show-Service show-Commercial show-Installation show-Residential">
+      <div class="card show-card">
         <div class='card-header'>
           <h3><%= data.dealers[dealer].data.name %></h3>
         </div>
