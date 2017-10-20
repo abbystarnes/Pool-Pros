@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -7,8 +10,26 @@
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
+  font-weight: normal;
+  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Regular.tff") format("tff"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Light.tff") format("tff"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
   font-weight: bold;
   src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Italic.tff") format("tff"); }
 
 .wrapper-inner {
   max-width: 1440px;
@@ -19,7 +40,8 @@ body {
   background-image: url("../img/water-image.png");
   background-repeat: no-repeat;
   background-position: top 2.5em center;
-  min-height: 100%; }
+  min-height: 100%;
+  color: #616161; }
 
 ul {
   margin: 0; }
@@ -226,9 +248,13 @@ ul {
   padding-top: 1em;
   padding-bottom: 1em; }
   .footer-2 ul {
-    padding-left: 0; }
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
     .footer-2 ul li {
       display: inline;
+      line-height: 1.3;
       padding-right: .75em;
       border-right: 1px solid white;
       padding-left: .5em;
@@ -250,6 +276,7 @@ ul {
   margin-top: 7em;
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-bottom: 2em;
   text-align: center; }
   .filter-bar .zip-blurb {
     color: #216ddf;
@@ -276,12 +303,19 @@ ul {
   .filter-bar .checkboxes-filter {
     margin: 0 auto;
     display: inline-block;
-    padding-left: 0; }
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%; }
     .filter-bar .checkboxes-filter li {
       font-size: .75em;
       color: #616161;
       text-align: left;
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      display: inline-block;
+      width: 50%; }
       .filter-bar .checkboxes-filter li input {
         margin-right: .5em;
         -webkit-appearance: none;
@@ -313,13 +347,139 @@ ul {
       .filter-bar .btn-tooltip:hover::after, .filter-bar .btn-tooltip:active::after, .filter-bar .btn-tooltip:focus::after {
         content: 'Sed at utamur petentium, facilisis repudiare nec eu.';
         transition: all .25s ease-in-out;
+        z-index: 2;
         width: 100px;
         position: absolute;
         background-color: white;
         padding: 1em;
-        left: 0px;
+        right: 0;
         top: 2.5em;
-        border: 1px solid #216ddf;
-        border-radius: 3px; }
-  .filter-bar .tooltip {
-    display: none; }
+        color: #616161;
+        line-height: 1.4;
+        border-radius: 3px;
+        -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+        -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29); }
+
+.dealer-cards {
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  justify-content: space-around; }
+  .dealer-cards .card {
+    display: none;
+    width: 100%;
+    max-width: 415px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    border: 1px solid #f6f6f6;
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
+    border-radius: 10px; }
+    .dealer-cards .card .card-header {
+      padding-left: 5%;
+      padding-right: 5%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 7em; }
+      .dealer-cards .card .card-header:after {
+        content: '';
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        background-color: #efefef; }
+      .dealer-cards .card .card-header h3 {
+        flex: 1;
+        font-size: 1.625em;
+        font-weight: 100;
+        line-height: 1.3;
+        margin: 0;
+        color: #616161;
+        text-align: center; }
+    .dealer-cards .card .card-info {
+      padding-left: 5%;
+      padding-right: 5%; }
+    .dealer-cards .card .card-info-phone {
+      font-size: 1.625em;
+      font-weight: bold;
+      color: #3f3f3f;
+      text-align: center; }
+      .dealer-cards .card .card-info-phone img {
+        vertical-align: text-bottom;
+        height: 1.15em;
+        width: 1.15em;
+        margin-right: .3em; }
+    .dealer-cards .card .card-comment {
+      font-style: italic;
+      font-size: .75em;
+      text-align: center;
+      margin-bottom: 2.167em; }
+    .dealer-cards .card .btn-contact-form {
+      transition: all .25s ease-in-out;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #0bc9c8;
+      border-radius: 3px;
+      color: #01529e;
+      padding: 1em;
+      font-weight: bold;
+      background-color: white;
+      margin-bottom: 2.5em; }
+      .dealer-cards .card .btn-contact-form:focus, .dealer-cards .card .btn-contact-form:active {
+        transition: all .25s ease-in-out;
+        background-color: #f6f6f6; }
+      .dealer-cards .card .btn-contact-form .email-icon {
+        height: 1em;
+        vertical-align: text-top;
+        margin-right: 1em; }
+    .dealer-cards .card h4 {
+      text-align: center;
+      margin-bottom: .5em; }
+    .dealer-cards .card .card-hours {
+      margin-bottom: 3em;
+      text-align: center;
+      padding-left: 0;
+      font-size: .8125em;
+      font-weight: normal;
+      line-height: 1.5; }
+    .dealer-cards .card .service-types {
+      padding-left: 5%;
+      padding-right: 5%;
+      background-color: #f6f6f6;
+      padding-top: 2.5em;
+      padding-bottom: 1.5em;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0px 0px 10px 10px;
+      font-size: .75em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 110px;
+      padding-left: 10%;
+      justify-content: center; }
+      .dealer-cards .card .service-types li {
+        flex: 1;
+        list-style-type: none;
+        width: 50%;
+        margin-bottom: 1em; }
+      .dealer-cards .card .service-types .service-icon {
+        vertical-align: bottom;
+        height: 1em; }
+  .dealer-cards .show-Installation, .dealer-cards .show-Commercial, .dealer-cards .show-Service, .dealer-cards .show-Residential {
+    display: block; }
+
+/*
+- filtering
+- form w/html validation
+- responsive styling - nav, form
+- two-way data binding (framwork)
+*/

@@ -6,40 +6,53 @@
     </p>
     <h4 class="title-filter">Filter Results</h4>
     <ul class='checkboxes-filter'>
-      <li><label for="service"><input type="checkbox">Service</label></li>
-      <li><label for="installation"><input type="checkbox">Installation</label></li>
-      <li><label for="residential"><input type="checkbox">Residential</label></li>
-      <li><label for="commercial"><input type="checkbox">Commercial<button id='btn-dealer-tooltip' class="btn-tooltip">?</button></label></li>
+      <li><label for="service"><input data-certifications='Service' class='checkbox' type="checkbox">Service</label></li>
+      <li><label for="installation"><input data-certifications='Installation' class='checkbox' type="checkbox">Installation</label></li>
+      <li><label for="residential"><input data-certifications='Residential' class='checkbox' type="checkbox">Residential</label></li>
+      <li><label for="commercial"><input data-certifications='Commercial' class='checkbox' type="checkbox">Commercial<button id='btn-dealer-tooltip' class="btn-tooltip">?</button></label></li>
     </ul>
   </div>
-  <div>
+  <div class='dealer-cards'>
     <% for (dealer in data.dealers) { %>
-      <div class="card">
-        <h3><%= data.dealers[dealer].data.name %></h3>
-        <p>
-          <%= data.dealers[dealer].data.phone1 %>
-        </p>
-        <p>Can't talk now? Click below to send an email.</p>
-        <button>Contact this Pro</button>
-        <h4>Business Hours</h4>
-        <ul>
-          <li>Weekdays
-            <%= data.dealers[dealer].data.weekHours['mon']%>
-          </li>
-          <li>Saturdays
-            <%= data.dealers[dealer].data.weekHours['sat'] ? data.dealers[dealer].data.weekHours['sat'] : 'CLOSED' %>
-          </li>
-          <li>Sundays
-            <%= data.dealers[dealer].data.weekHours['sun'] ? data.dealers[dealer].data.weekHours['sun'] : 'CLOSED' %>
-          </li>
-        </ul>
-        <div>
-          <% for (let x = 0; x < data.dealers[dealer].data.certifications.length; x++) { %>
-            <li>
+      <div class="card show-Service show-Commercial show-Installation show-Residential">
+        <div class='card-header'>
+          <h3><%= data.dealers[dealer].data.name %></h3>
+        </div>
+        <div class='card-info'>
+          <p class="card-info-phone">
+            <img src="./img/phone-icon-desktop.png" alt="">
+            <%= data.dealers[dealer].data.phone1 %>
+          </p>
+          <p class="card-comment">Can't talk now? Click below to send an email.</p>
+          <button class='btn-contact-form'><img class='email-icon' src="./img/email-icon.png" alt="email symbol">Contact this Pro</button>
+          <h4>Business Hours</h4>
+          <ul class='card-hours'>
+            <li>Weekdays
+              <%= data.dealers[dealer].data.weekHours['mon']%>
+            </li>
+            <li>Saturdays
+              <%= data.dealers[dealer].data.weekHours['sat'] ? data.dealers[dealer].data.weekHours['sat'] : 'CLOSED' %>
+            </li>
+            <li>Sundays
+              <%= data.dealers[dealer].data.weekHours['sun'] ? data.dealers[dealer].data.weekHours['sun'] : 'CLOSED' %>
+            </li>
+          </ul>
+        </div>
+        <ul class="service-types">
+          <% for (let x = 0; x < data.dealers[dealer].data.certifications.length; x++) {
+            let icons = {
+              'Installation Pro' : './img/star-installation-pro.png',
+              'Residential Pro' : './img/home-residential-pro.png',
+              'Service Pro' : './img/gear-service-pro.png',
+              'Commercial Pro' : './img/users-commercial-pro.png'
+            }
+          %>
+            <li class="card-service" data-certifications='<%= data.dealers[dealer].data.certifications %>'>
+              <img class='service-icon' src="<%= icons[data.dealers[dealer].data.certifications[x]] %>" alt="">
               <%= data.dealers[dealer].data.certifications[x]%>
             </li>
             <% } %>
-        </div>
+        </ul>
       </div>
       <% } %>
   </div>

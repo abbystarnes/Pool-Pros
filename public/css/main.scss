@@ -2,6 +2,7 @@
 // variables named after colors? yikes! - I know, but I can always keyword replace, and increases readability
 $white: #fff;
 $grey: #616161;
+$grey-dark: #3f3f3f;
 $grey-active: #393939;
 $blue: #01529e;
 $blue-light: #216ddf;
@@ -10,6 +11,10 @@ $teal-active: #0badac;
 $lt-grey: #f6f6f6;
 $lt-grey-hov: #efefef;
 $tool-tip-grey: #d8d8d8;
+
+* {
+  box-sizing: border-box;
+}
 
 @font-face {
   font-family: 'Open Sans';
@@ -21,8 +26,29 @@ $tool-tip-grey: #d8d8d8;
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Regular.tff') format('tff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Light.tff') format('tff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
   font-weight: bold;
   src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Bold.tff') format('tff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Italic.tff') format('tff');
 }
 
 .wrapper-inner {
@@ -36,6 +62,7 @@ body {
   background-repeat: no-repeat;
   background-position: top 2.5em center;
   min-height: 100%;
+  color: $grey;
 }
 
 ul {
@@ -295,8 +322,12 @@ ul {
   padding-bottom: 1em;
   ul {
     padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     li {
       display: inline;
+      line-height: 1.3;
       padding-right: .75em;
       border-right: 1px solid $white;
       padding-left: .5em;
@@ -325,6 +356,7 @@ ul {
   margin-top: 7em;
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-bottom: 2em;
   text-align: center;
 
   .zip-blurb {
@@ -359,11 +391,18 @@ ul {
     margin: 0 auto;
     display: inline-block;
     padding-left: 0;
+    display: flex;
+    flex-direction :row;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
     li {
         font-size: .75em;
         color: $grey;
         text-align: left;
         margin-bottom: 1em;
+        display: inline-block;
+        width: 50%;
         input {
           margin-right: .5em;
           -webkit-appearance: none;
@@ -402,20 +441,175 @@ ul {
       &::after {
         content: 'Sed at utamur petentium, facilisis repudiare nec eu.';
         transition: all .25s ease-in-out;
+        z-index: 2;
         width: 100px;
         position: absolute;
         background-color: $white;
         padding: 1em;
-        left: 0px;
+        right: 0;
         top: 2.5em;
-        border: 1px solid $blue-light;
+        color: $grey;
+        line-height: 1.4;
+        // border: 1px solid $blue-light;
         border-radius: 3px;
+        -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+        -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+        box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
       }
     }
   }
-
-  .tooltip {
-    display: none;
-  }
-
 }
+
+.dealer-cards {
+  margin-bottom: 5em;
+  display:flex;
+  flex-direction :row;
+  flex-wrap: wrap;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  justify-content: space-around;
+  .card {
+    display: none;
+    width: 100%;
+    max-width: 415px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    border: 1px solid $lt-grey;
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
+    border-radius: 10px;
+    .card-header {
+      padding-left: 5%;
+      padding-right: 5%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 7em;
+      &:after {
+        content: '';
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        background-color: $lt-grey-hov;
+      }
+      h3 {
+        flex: 1;
+
+        font-size: 1.625em;
+        font-weight: 100;
+        line-height: 1.3;
+        margin: 0;
+        color: $grey;
+        text-align: center;
+        // margin-bottom: 0;
+        // padding-bottom: 1em;
+      }
+    }
+    .card-info {
+      // padding-top: .5em;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .card-info-phone {
+      font-size: 1.625em;
+      font-weight: bold;
+      color: $grey-dark;
+      text-align: center;
+      img {
+        vertical-align: text-bottom;
+        height: 1.15em;
+        width: 1.15em;
+        margin-right: .3em;
+      }
+    }
+    .card-comment {
+      font-style: italic;
+      font-size: .75em;
+      text-align: center;
+      margin-bottom: 2.167em;
+    }
+    // .- -... -... -.--
+    // .-.. ..- -. .-
+
+    .btn-contact-form {
+      transition: all .25s ease-in-out;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid $teal;
+      border-radius: 3px;
+      color: $blue;
+      padding: 1em;
+      font-weight: bold;
+      background-color: $white;
+      margin-bottom: 2.5em;
+      &:focus, &:active {
+          transition: all .25s ease-in-out;
+          background-color: $lt-grey;
+      }
+      .email-icon {
+        height: 1em;
+        vertical-align: text-top;
+        margin-right: 1em;
+      }
+    }
+    h4 {
+      text-align: center;
+      margin-bottom: .5em;
+    }
+    .card-hours {
+      margin-bottom: 3em;
+      text-align: center;
+      padding-left: 0;
+      font-size: .8125em;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+    .service-types {
+      padding-left: 5%;
+      padding-right: 5%;
+      background-color: $lt-grey;
+      padding-top: 2.5em;
+      padding-bottom: 1.5em;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0px 0px 10px 10px;
+      font-size: .75em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 110px;
+      padding-left: 10%;
+      justify-content: center;
+      li {
+        flex: 1;
+        list-style-type: none;
+        width: 50%;
+        margin-bottom: 1em;
+      }
+      .service-icon {
+        vertical-align: bottom;
+        height: 1em;
+      }
+    }
+  }
+  .show-Installation, .show-Commercial, .show-Service, .show-Residential {
+    display: block;
+  }
+}
+
+
+// card filtering
+
+
+
+
+/*
+- filtering
+- form w/html validation
+- responsive styling - nav, form
+- two-way data binding (framwork)
+*/
