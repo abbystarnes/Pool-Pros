@@ -477,9 +477,13 @@ ul {
   .dealer-cards .show-card {
     display: block; }
 
-/*
-- filtering
-- form w/html validation
-- responsive styling - nav, form
-- two-way data binding (framwork)
-*/
+.contact-form-modal {
+  position: fixed;
+  top: 5em;
+  bottom: 5em;
+  left: 5%;
+  right: 5%;
+  background-color: white; }
+
+input:focus:invalid {
+  outline: none; }

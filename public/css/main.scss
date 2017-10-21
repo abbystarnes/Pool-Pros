@@ -604,14 +604,45 @@ ul {
 }
 
 
-// card filtering
+// contact form modal
+.contact-form-modal {
+  position: fixed;
+  top: 5em;
+  bottom: 5em;
+  left: 5%;
+  right: 5%;
+  background-color: $white;
 
+}
 
+// input:invalid {
+//   position: relative;
+//   &::after {
+//     content:'';
+//     background-image: '../img/circle-form.png';
+//     height: 1em;
+//     width: 1em;
+//     position: absolute;
+//     top: 20px;
+//     right: 0px;
+//   }
+//   // box-shadow: 0 0 5px 1px red;
+// }
+//
+// input:valid {
+//   position: relative;
+//   &::after {
+//     content:'';
+//     background-image: '../img/checkmark-circle.png';
+//     height: 1em;
+//     width: 1em;
+//     position: absolute;
+//     top: 20px;
+//     right: 0px;
+//   }
+//   // box-shadow: 0 0 5px 1px red;
+// }
 
-
-/*
-- filtering
-- form w/html validation
-- responsive styling - nav, form
-- two-way data binding (framwork)
-*/
+input:focus:invalid {
+  outline: none;
+}

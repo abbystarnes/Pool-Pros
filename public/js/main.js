@@ -23,58 +23,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
 
-// sorting functionality
-
-
-//   let cards = document.getElementsByClassName("card");
-//   let cards_services = {};
-//   for (let x = 0; x < cards.length; x++){
-//     let card = cards[x];
-//     let services = card.getElementsByClassName('card-service')[0].dataset.certifications.split(',');
-//     cards_services[x] = services;
-//   }
-//
-//   let checkboxes = document.getElementsByClassName('checkbox');
-//
-//   for(let x = 0; x < checkboxes.length; x++){
-//     checkboxes[x].addEventListener("mousedown", function() {
-//       let service_type = checkboxes[x].dataset.certifications;
-//
-//       if (checkboxes[x].checked){
-//         for (let x = 0; x < cards.length; x++){
-//           toggleCard(service_type, x, 'add');
-//         }
-//       } else {
-//         for (let x = 0; x < cards.length; x++){
-//           toggleCard(service_type, x, 'remove');
-//         }
-//       }
-//
-//     });
-//   }
-//
-//   let toggleCard = function(service, card_idx, direction){
-//     if (direction === 'remove'){
-//       if (cards_services[card_idx].includes(`${service} Pro`)){
-//         cards[card_idx].classList.add(`show-${service}`);
-//       }
-//     } else {
-//       if (cards_services[card_idx].includes(`${service} Pro`)){
-//         cards[card_idx].classList.remove(`show-${service}`);
-//       }
-//     }
-//
-//   }
-// });
-
-
 // filtering logic
-
-// if nothing checked
-  // all show
-// if categorie(s) checked
-    // show card w/out category
-    // hide cards w/out category
+let cards = document.getElementsByClassName("card");
+let checkboxes = document.getElementsByClassName('checkbox');
 
 let services = {
   'Installation Pro' : {
@@ -95,7 +46,6 @@ let services = {
   }
 }
 
-let cards = document.getElementsByClassName("card");
 
 for (let x = 0; x < cards.length; x++){
   let card = cards[x];
@@ -107,47 +57,80 @@ for (let x = 0; x < cards.length; x++){
   }
 }
 
-let checkboxes = document.getElementsByClassName('checkbox');
 
 for(let x = 0; x < checkboxes.length; x++){
   checkboxes[x].addEventListener("mousedown", function() {
-
     if (!checkboxes[x].checked){
       services[`${checkboxes[x].dataset.certification} Pro`].show = true;
     } else {
       services[`${checkboxes[x].dataset.certification} Pro`].show = false;
     }
-
     change_showing();
   });
 }
 
 let change_showing = function(){
-
   for (let y = 0; y < cards.length; y++){
     cards[y].classList.remove('show-card');
   }
-  
   let none_checked = true;
   for (service in services){
     if (services[service].show){
-      console.log('category showing');
       none_checked = false;
       for (let z = 0; z < services[service].cards.length; z++){
-        console.log(z);
         services[service].cards[z].classList.add('show-card');
       }
     }
   }
   if (none_checked){
-    console.log('none checked');
     for (let i = 0; i < cards.length; i++){
-      console.log(i);
       cards[i].classList.add('show-card');
     }
   }
 }
 
-// for checked services, add show class; remove from rest
-// if no services are checked, add show class to all cards
+// overlay form
+let form_btns = document.getElementsByClassName('btn-contact-form');
+// let form_modal = document.getElementById('form_modal');
+let contact_form_modal = document.getElementById('contact-form-modal');
+let contact_form_overlay = document.getElementById('contact-form-overlay');
+let company_name_1 = document.getElementById('company-name-1');
+let company_name_2 = document.getElementById('company-name-2');
+
+for (let x = 0; x < form_btns.length; x++){
+  form_btns[x].addEventListener('click', function(){
+    event.preventDefault();
+    // name
+    console.log(form_btns[x].dataset.dealerinfo);
+    company_name_1.innerHTML = form_btns[x].dataset.dealerinfo;
+    company_name_2.innerHTML = form_btns[x].dataset.dealerinfo;
+    contact_form_modal.classList.remove("hidden");
+    contact_form_overlay.classList.remove('hidden');
+  })
+}
+
+contact_form_overlay.addEventListener('click', ()=>{
+  event.preventDefault();
+  contact_form_modal.classList.add("hidden");
+  contact_form_overlay.classList.add('hidden');
+});
+
+  // form front-end validation
+  let contact_form = document.getElementById('contact-form');
+  console.log(contact_form);
+  let contact_form_inputs = contact_form.getElementsByTagName('input');
+  console.log(contact_form_inputs);
+  for (let y = 0; y < contact_form_inputs.length; y++){
+    contact_form_inputs[y].addEventListener('change', function(){
+      if (contact_form_inputs[y].validity.valid) {
+        console.log(contact_form_inputs[y].nextSibling);
+        /// change to adding/removing class w/bg img - so I can do fade transition
+        contact_form_inputs[y].nextSibling.src= './img/checkmark-circle.png';
+      } else {
+        contact_form_inputs[y].nextSibling.src= './img/circle-form.png';
+      }
+
+
+    })
+  }
 });
