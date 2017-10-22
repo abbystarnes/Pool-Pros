@@ -541,8 +541,6 @@ ul {
       text-align: center;
       margin-bottom: 2.167em;
     }
-    // .- -... -... -.--
-    // .-.. ..- -. .-
 
     .btn-contact-form {
       transition: all .25s ease-in-out;
@@ -841,7 +839,7 @@ input:focus:invalid {
     }
 
     .btn-find-a-pro {
-      margin-top: calc(6.25em - 30.5px);
+      margin-top: calc(6.25em - 33.5px);
     }
   }
   .hamburger {
@@ -904,17 +902,59 @@ input:focus:invalid {
     margin-right: 0;
   }
 
-}
+  .filter-bar {
 
+    .title-filter {
+      display: inline-block;
+      // margin-left: 2em;
+    }
+    .checkboxes-filter {
+      min-width: 535px;
+      display: inline-block;
+      margin-left: 2em;
+      li {
+        width: 24%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1250px){
+  .filter-bar {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: inherit;
+    padding-left: 10%;
+    padding-right: 10%;
+    .zip-blurb {
+      display: inline-block;
+      border-right: 1px solid $break-line;
+      padding-bottom: 0;
+      padding-right: 2em;
+      line-height: 3em;
+      &::after {
+        display: none;
+      }
+    }
+    .title-filter {
+      display: inline-block;
+      margin-left: 2em;
+    }
+    .checkboxes-filter {
+      min-width: 535px;
+      display: inline-block;
+      margin-left: 2em;
+      li {
+        width: 24%;
+      }
+    }
+  }
+}
 @media screen and (min-width: 1465px){
   .dealer-cards {
     margin-left: 0;
     margin-right: 0;
   }
-  .filter-bar {
-    margin-left: 0;
-    margin-right: 0;
-  }
+
 
   .header-1 ul {
     margin-right: 0;
