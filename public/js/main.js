@@ -100,7 +100,7 @@ let company_name_2 = document.getElementById('company-name-2');
 for (let x = 0; x < form_btns.length; x++){
   form_btns[x].addEventListener('click', function(){
     event.preventDefault();
-    // name
+    window.scrollTo(0, 0);
     console.log(form_btns[x].dataset.dealerinfo);
     company_name_1.innerHTML = form_btns[x].dataset.dealerinfo;
     company_name_2.innerHTML = form_btns[x].dataset.dealerinfo;
