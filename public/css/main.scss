@@ -1,5 +1,4 @@
 // global SASS color & font variables
-// variables named after colors? yikes! - I know, but I can always keyword replace, and increases readability
 $white: #fff;
 $grey: #616161;
 $grey-dark: #3f3f3f;
@@ -474,7 +473,7 @@ ul {
   }
 }
 
-// cleafix
+// clearfix
 .dealer-cards:after{
   content: "";
   display: table;
