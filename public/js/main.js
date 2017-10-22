@@ -117,20 +117,17 @@ contact_form_overlay.addEventListener('click', ()=>{
 
   // form front-end validation
   let contact_form = document.getElementById('contact-form');
-  console.log(contact_form);
   let contact_form_inputs = contact_form.getElementsByTagName('input');
-  console.log(contact_form_inputs);
   for (let y = 0; y < contact_form_inputs.length; y++){
     contact_form_inputs[y].addEventListener('change', function(){
       if (contact_form_inputs[y].validity.valid) {
-        console.log(contact_form_inputs[y].nextSibling);
-        /// change to adding/removing class w/bg img - so I can do fade transition
-        contact_form_inputs[y].nextSibling.src= './img/checkmark-circle.png';
+        console.log(contact_form_inputs[y].nextElementSibling);
+        contact_form_inputs[y].nextElementSibling.classList.add('checkmark-checked');
       } else {
-        contact_form_inputs[y].nextSibling.src= './img/circle-form.png';
+        console.log(contact_form_inputs[y]);
+        contact_form_inputs[y].nextElementSibling.classList.remove('checkmark-checked');
       }
-
-
     })
   }
+
 });

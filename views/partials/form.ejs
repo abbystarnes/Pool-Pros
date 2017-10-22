@@ -1,22 +1,45 @@
 <div id="contact-form-overlay" class="overlay hidden"></div>
 <div id="contact-form-modal" class="contact-form-modal hidden">
-  <form id="contact-form" action="">
-    <!-- create success message, fade out -->
-    <div>
-      <h4>Email</h4>
-      <h3 id='company-name-1'></h3>
-    </div>
-    <p>Fill out the form below and <span id="company-name-2"></span> will get in touch.</p>
-    <label for="name"><input class='name' type="text" required pattern="[a-zA-Z0-9]+[ ][a-zA-Z0-9]+"><img src="./img/circle-form.png" alt="">First and last name</label>
-    <label for="number"><input class='number' type="tel" required pattern="\d{3}[\-]\d{3}[\-]\d{4}">Phone number</label>
-    <label for="email"><input class='email' type="email" required>Email address</label>
-    <label for="comments"><input class='comments' type="text">Comments or questions (optional)</label>
-    <fieldset>
-      <legend> Do you currently own a pool or spa? </legend>
-      <label> <input type="radio" name="ownership-status" value="Yes"> Yes </label>
-      <label> <input type="radio" name="ownership-status" value="No"> No </label>
-    </fieldset>
-    <button>Send</button>
-    </ul>
-  </form>
+  <div class='modal-header'>
+    <h4>Email</h4>
+    <h3 id='company-name-1'></h3>
+  </div>
+  <div class='modal-body'>
+    <form id="contact-form" class="contact-form" action="">
+      <!-- create success message, fade out -->
+      <p>Fill out the form below and <span id="company-name-2"></span> will get in touch.</p>
+
+      <div class='container-form-input'>
+        <label for="name">First and last name</label>
+        <input class='name' type="text" required pattern="[a-zA-Z0-9]+[ ][a-zA-Z0-9]+">
+        <div class='checkmark'></div>
+      </div>
+
+      <div class='container-form-input container-form-input-number'>
+        <label for="number">Phone number</label>
+        <input class='number' type="tel" required pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+        <div class='checkmark'></div>
+      </div>
+
+      <div class='container-form-input'>
+        <label for="email">Email address</label>
+        <input class='email' type="email" required>
+        <div class='checkmark'></div>
+      </div>
+
+      <label class='label-comments' for="comments">Comments or questions</label>
+      <p class='input-info'>optional</p>
+      <textarea class='comments'></textarea>
+
+
+      <div class='container-form-input container-form-input-ownership'>
+        <label class='label-ownership' for='ownership-status'> Do you currently own a pool or spa? </label>
+        <label class='label-radio'> <input type="radio" name="ownership-status" value="Yes"> Yes </label>
+        <label class='label-radio'> <input type="radio" name="ownership-status" value="No"> No </label>
+      </div>
+      <button class='btn-contact-form-submit' type='submit'>Send</button>
+      </ul>
+    </form>
+  </div>
+
 </div>
