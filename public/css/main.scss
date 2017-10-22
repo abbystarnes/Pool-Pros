@@ -208,6 +208,10 @@ ul {
 
 .header-1 {
   display: none;
+  .ss-action {
+    margin-left: .5em;
+    vertical-align: middle;
+  }
 }
 
 .header-2 {
@@ -618,6 +622,8 @@ ul {
 // contact form modal
 
 .contact-form-modal {
+  max-width: 700px;
+  margin: 0 auto;
   z-index: 2;
   position: absolute;
   top: 5em;
@@ -668,6 +674,10 @@ ul {
       margin-bottom: 0;
       line-height: 2;
     }
+    input::placeholder {
+      color: $grey-form;
+      font-weight: 100;
+    }
     input, textarea {
       display: block;
       width: 100%;
@@ -686,6 +696,7 @@ ul {
     .container-form-input-number {
       width: 75%;
     }
+
 
     .container-form-input-ownership {
 
@@ -863,6 +874,7 @@ input:focus:invalid {
     display: none;
   }
   .nav {
+    z-index: 1;
     position: relative;
     float: right;
     opacity: 1;

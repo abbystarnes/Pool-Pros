@@ -160,6 +160,9 @@ ul {
 
 .header-1 {
   display: none; }
+  .header-1 .ss-action {
+    margin-left: .5em;
+    vertical-align: middle; }
 
 .header-2 {
   height: 3.5em;
@@ -487,6 +490,8 @@ ul {
     display: inline-block; }
 
 .contact-form-modal {
+  max-width: 700px;
+  margin: 0 auto;
   z-index: 2;
   position: absolute;
   top: 5em;
@@ -525,6 +530,9 @@ ul {
       float: right;
       margin-bottom: 0;
       line-height: 2; }
+    .contact-form-modal .modal-body input::placeholder {
+      color: #bebebe;
+      font-weight: 100; }
     .contact-form-modal .modal-body input, .contact-form-modal .modal-body textarea {
       display: block;
       width: 100%;
@@ -665,6 +673,7 @@ input:focus:invalid {
     display: none; }
 
   .nav {
+    z-index: 1;
     position: relative;
     float: right;
     opacity: 1;
