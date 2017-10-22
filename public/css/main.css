@@ -55,6 +55,7 @@ ul {
     text-decoration: none; }
 
 .overlay {
+  z-index: 1;
   transition: all .25s ease-in;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
@@ -366,20 +367,23 @@ ul {
         -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
         box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29); }
 
+.dealer-cards:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .dealer-cards {
   margin-bottom: 5em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin-left: 2.5%;
   margin-right: 2.5%;
   justify-content: space-around; }
   .dealer-cards .card {
+    float: left;
     display: none;
     width: 100%;
-    max-width: 415px;
+    margin: 0 auto;
     margin-top: .5em;
-    margin-bottom: .5em;
+    margin-bottom: 2em;
     border: 1px solid #f6f6f6;
     -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
     -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.29);
@@ -480,9 +484,10 @@ ul {
         vertical-align: bottom;
         height: 1em; }
   .dealer-cards .show-card {
-    display: block; }
+    display: inline-block; }
 
 .contact-form-modal {
+  z-index: 2;
   position: absolute;
   top: 5em;
   left: 5%;
@@ -611,6 +616,11 @@ input:focus:invalid {
       line-height: 4.6em; }
     .header-2 .logo {
       height: 1.75em; } }
+@media screen and (min-width: 590px) {
+  .dealer-cards .card {
+    width: 48.75%; }
+    .dealer-cards .card:nth-child(odd) {
+      margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
   .header-1 {
     display: block;
@@ -707,10 +717,14 @@ input:focus:invalid {
     margin-left: 2em; }
     .filter-bar .checkboxes-filter li {
       width: 24%; } }
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1150px) {
+  .dealer-cards {
+    margin-right: 0; }
+    .dealer-cards .card {
+      width: 30.8341%;
+      margin-right: 2.5%; } }
+@media screen and (min-width: 1300px) {
   .filter-bar {
-    margin-left: 0;
-    margin-right: 0;
     text-align: inherit;
     padding-left: 10%;
     padding-right: 10%; }
@@ -731,10 +745,14 @@ input:focus:invalid {
       margin-left: 2em; }
       .filter-bar .checkboxes-filter li {
         width: 24%; } }
-@media screen and (min-width: 1465px) {
-  .dealer-cards {
+@media screen and (min-width: 1440px) {
+  .filter-bar {
     margin-left: 0;
     margin-right: 0; }
+
+  .dealer-cards {
+    margin-left: 0;
+    margin-right: -2.5%; }
 
   .header-1 ul {
     margin-right: 0; }
