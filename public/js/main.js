@@ -121,10 +121,8 @@ contact_form_overlay.addEventListener('click', ()=>{
   for (let y = 0; y < contact_form_inputs.length; y++){
     contact_form_inputs[y].addEventListener('change', function(){
       if (contact_form_inputs[y].validity.valid) {
-        console.log(contact_form_inputs[y].nextElementSibling);
         contact_form_inputs[y].nextElementSibling.classList.add('checkmark-checked');
       } else {
-        console.log(contact_form_inputs[y]);
         contact_form_inputs[y].nextElementSibling.classList.remove('checkmark-checked');
       }
     })

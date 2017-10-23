@@ -160,6 +160,11 @@ ul {
 
 .header-1 {
   display: none; }
+  .header-1 a {
+    transition: all .25s ease-in; }
+    .header-1 a:hover, .header-1 a:active {
+      transition: all .25s ease-out;
+      opacity: .7; }
   .header-1 .ss-action {
     margin-left: .5em;
     vertical-align: middle; }
@@ -276,7 +281,7 @@ ul {
         transition: all .25s ease-in-out; }
         .footer-2 ul li a:active, .footer-2 ul li a:focus {
           transition: all .25s ease-in-out;
-          color: #efefef; }
+          opacity: .7; }
 
 .filter-bar {
   background-color: #f6f6f6;
@@ -580,13 +585,14 @@ ul {
         border: 4.5px solid #216ddf; }
     .contact-form-modal .modal-body .btn-contact-form-submit {
       transition: all .25s ease-in-out;
-      margin-top: 2em;
+      margin-top: 1em;
       background-color: white;
       color: #0bc9c8;
       font-weight: bold;
       float: right;
-      margin-bottom: 1.5em;
-      border: none; }
+      margin-bottom: 1em;
+      border: none;
+      padding: 1em; }
       .contact-form-modal .modal-body .btn-contact-form-submit:focus, .contact-form-modal .modal-body .btn-contact-form-submit:active {
         transition: all .25s ease-in-out;
         background-color: #efefef; }
@@ -630,6 +636,14 @@ input:focus:invalid {
     .dealer-cards .card:nth-child(odd) {
       margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
+  .card .btn-contact-form:hover {
+    transition: all .25s ease-in-out;
+    background-color: #f6f6f6; }
+
+  .contact-form-modal .btn-contact-form-submit:hover {
+    transition: all .25s ease-in-out;
+    background-color: #efefef; }
+
   .header-1 {
     display: block;
     visibility: visible;
@@ -668,6 +682,9 @@ input:focus:invalid {
       line-height: 6.25em; }
     .header-2 .btn-find-a-pro {
       margin-top: calc(6.25em - 33.5px); }
+      .header-2 .btn-find-a-pro:hover {
+        transition: all .25s ease-in-out;
+        background-color: #efefef; }
 
   .hamburger {
     display: none; }
@@ -681,7 +698,7 @@ input:focus:invalid {
     border: none;
     width: 45%;
     box-shadow: none;
-    margin-right: 2.5%; }
+    margin-right: 8%; }
     .nav button {
       display: none; }
     .nav ul {
@@ -725,13 +742,20 @@ input:focus:invalid {
     display: inline-block;
     margin-left: 2em; }
     .filter-bar .checkboxes-filter li {
-      width: 24%; } }
+      width: 24%; }
+
+  .footer-2 a:hover {
+    transition: all .25s ease-in-out;
+    opacity: .7; } }
 @media screen and (min-width: 1150px) {
   .dealer-cards {
     margin-right: 0; }
     .dealer-cards .card {
       width: 30.8341%;
-      margin-right: 2.5%; } }
+      margin-right: 2.5%; }
+
+  .nav {
+    margin-right: 2.5%; } }
 @media screen and (min-width: 1300px) {
   .filter-bar {
     text-align: inherit;

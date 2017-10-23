@@ -207,6 +207,13 @@ ul {
 
 .header-1 {
   display: none;
+  a {
+    transition: all .25s ease-in;
+    &:hover, &:active {
+      transition: all .25s ease-out;
+      opacity: .7;
+    }
+  }
   .ss-action {
     margin-left: .5em;
     vertical-align: middle;
@@ -292,8 +299,7 @@ ul {
     width: 188px;
     margin-bottom: .5em;
   }
-  .icon-footer {
-  }
+
   .icon-twitter {
     width: 22px;
     height: 18px;
@@ -322,8 +328,6 @@ ul {
       margin-right: .5em;
       &:last-child {
         margin-right: 0;
-      }
-      &:active, &:focus {
       }
     }
   }
@@ -354,7 +358,7 @@ ul {
         transition: all .25s ease-in-out;
         &:active, &:focus {
           transition: all .25s ease-in-out;
-          color: $lt-grey-hov;
+          opacity: .7;
         }
       }
     }
@@ -745,14 +749,14 @@ ul {
 
     .btn-contact-form-submit {
       transition: all .25s ease-in-out;
-      margin-top: 2em;
+      margin-top: 1em;
       background-color: $white;
       color: $teal;
       font-weight: bold;
       float: right;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
       border: none;
-
+      padding: 1em;
       &:focus, &:active {
         transition: all .25s ease-in-out;
         background-color: $lt-grey-hov;
@@ -821,6 +825,18 @@ input:focus:invalid {
 
 
 @media screen and (min-width: 785px){
+
+  .card .btn-contact-form {
+    &:hover {
+      transition: all .25s ease-in-out;
+      background-color: #f6f6f6;
+    }
+  }
+
+  .contact-form-modal .btn-contact-form-submit:hover {
+    transition: all .25s ease-in-out;
+    background-color: #efefef;
+  }
   .header-1 {
     display: block;
     visibility: visible;
@@ -852,6 +868,7 @@ input:focus:invalid {
       font-size: .75em;
       line-height: 3.295em;
     }
+
   }
   body {
     background-position: top 6.25em left;
@@ -867,6 +884,10 @@ input:focus:invalid {
 
     .btn-find-a-pro {
       margin-top: calc(6.25em - 33.5px);
+      &:hover {
+        transition: all .25s ease-in-out;
+        background-color: #efefef;
+      }
     }
   }
   .hamburger {
@@ -881,7 +902,7 @@ input:focus:invalid {
     border: none;
     width: 45%;
     box-shadow: none;
-    margin-right: 2.5%;
+    margin-right: 8%;
     button {
       display: none;
     }
@@ -945,6 +966,13 @@ input:focus:invalid {
       }
     }
   }
+
+  .footer-2 {
+    a:hover {
+      transition: all .25s ease-in-out;
+      opacity: .7;
+    }
+  }
 }
 
 @media screen and (min-width: 1150px){
@@ -954,6 +982,9 @@ input:focus:invalid {
         width: 30.8341%;
         margin-right: 2.5%;
       }
+    }
+    .nav {
+      margin-right: 2.5%;
     }
 }
 //1.6667
