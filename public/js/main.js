@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const companyName1 = document.getElementById('company-name-1');
   const companyName2 = document.getElementById('company-name-2');
   const contactTel = document.getElementById('contact-tel');
+  const btnContactFormSubmit = document.getElementById('btn-contact-form-submit');
+  const modalBody = document.getElementById('modal-body');
   ///////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW MOBILE NAV //////////////////////////////////////////////////////
@@ -141,4 +143,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
   ///////////////////////////////////////////////////////////////////////////////
+
 });
