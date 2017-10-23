@@ -1,138 +1,135 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-
+document.addEventListener('DOMContentLoaded', (event) => {
   // GLOBAL VARIABLES, DOM ELEMENTS ////////////////////////////////////////////
-  const btn_close_nav = document.getElementById('btn-close-nav');
+  const btnCloseNav = document.getElementById('btn-close-nav');
   const nav = document.getElementById('nav');
   const hamburger = document.getElementById('hamburger');
   const overlay = document.getElementById('overlay');
-  const cards = document.getElementsByClassName("card");
+  const cards = document.getElementsByClassName('card');
   const checkboxes = document.getElementsByClassName('checkbox');
-  const contact_form = document.getElementById('contact-form');
-  const contact_form_inputs = contact_form.getElementsByTagName('input');
-  const form_btns = document.getElementsByClassName('btn-contact-form');
-  const contact_form_modal = document.getElementById('contact-form-modal');
-  const contact_form_overlay = document.getElementById('contact-form-overlay');
-  const company_name_1 = document.getElementById('company-name-1');
-  const company_name_2 = document.getElementById('company-name-2');
-  //////////////////////////////////////////////////////////////////////////////
+  const contactForm = document.getElementById('contact-form');
+  const contactFormInputs = contactForm.getElementsByTagName('input');
+  const formBtns = document.getElementsByClassName('btn-contact-form');
+  const contactFormModal = document.getElementById('contact-form-modal');
+  const contactFormOverlay = document.getElementById('contact-form-overlay');
+  const companyName1 = document.getElementById('company-name-1');
+  const companyName2 = document.getElementById('company-name-2');
+  // ////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW MOBILE NAV //////////////////////////////////////////////////////
-  btn_close_nav.addEventListener('click', ()=>{
+  btnCloseNav.addEventListener('click', () => {
     event.preventDefault();
-    nav.classList.add("hidden");
+    nav.classList.add('hidden');
     overlay.classList.add('hidden');
   });
 
-  hamburger.addEventListener('click', ()=>{
+  hamburger.addEventListener('click', () => {
     event.preventDefault();
-    nav.classList.remove("hidden");
+    nav.classList.remove('hidden');
     overlay.classList.remove('hidden');
   });
 
-  overlay.addEventListener('click', ()=>{
+  overlay.addEventListener('click', () => {
     event.preventDefault();
-    nav.classList.add("hidden");
+    nav.classList.add('hidden');
     overlay.classList.add('hidden');
   });
-  //////////////////////////////////////////////////////////////////////////////
+  // ////////////////////////////////////////////////////////////////////////////
 
   // FILTER BUSINESS CARDS /////////////////////////////////////////////////////
-  let services = {
-    'Installation Pro' : {
+  const services = {
+    'Installation Pro': {
       cards: [],
-      show: false
+      show: false,
     },
-    'Residential Pro' : {
+    'Residential Pro': {
       cards: [],
-      show: false
+      show: false,
     },
-    'Service Pro' : {
+    'Service Pro': {
       cards: [],
-      show: false
+      show: false,
     },
-    "Commercial Pro" : {
+    'Commercial Pro': {
       cards: [],
-      show: false
-    }
-  }
+      show: false,
+    },
+  };
 
 
-  for (let x = 0; x < cards.length; x++){
-    let card = cards[x];
-    let card_services = card.getElementsByClassName('card-service')[0].dataset.certifications.split(',');
-    for (let y = 0; y < card_services.length; y++){
-      if (card_services[y] in services) {
-        services[card_services[y]].cards.push(card);
+  for (let x = 0; x < cards.length; x += 1) {
+    const card = cards[x];
+    const cardServices = card.getElementsByClassName('card-service')[0].dataset.certifications.split(',');
+    for (let y = 0; y < cardServices.length; y += 1) {
+      if (cardServices[y] in services) {
+        services[cardServices[y]].cards.push(card);
       }
     }
   }
 
+  const changeShowing = function () {
+    for (let y = 0; y < cards.length; y += 1) {
+      cards[y].classList.remove('show-card');
+    }
+    let noneChecked = true;
+    Object.values(services).forEach((service) => {
+      if (service.show) {
+        noneChecked = false;
+        for (let z = 0; z < service.cards.length; z += 1) {
+          service.cards[z].classList.add('show-card');
+        }
+      }
+    });
+    if (noneChecked) {
+      for (let i = 0; i < cards.length; i += 1) {
+        cards[i].classList.add('show-card');
+      }
+    }
+  };
 
-  for(let x = 0; x < checkboxes.length; x++){
-    checkboxes[x].addEventListener("mousedown", function() {
-      if (!checkboxes[x].checked){
+  for (let x = 0; x < checkboxes.length; x += 1) {
+    checkboxes[x].addEventListener('mousedown', () => {
+      if (!checkboxes[x].checked) {
         services[`${checkboxes[x].dataset.certification} Pro`].show = true;
       } else {
         services[`${checkboxes[x].dataset.certification} Pro`].show = false;
       }
-      change_showing();
+      changeShowing();
+    });
+  }
+  // ////////////////////////////////////////////////////////////////////////////
+
+  // HIDE/SHOW CONTACT FORM MODAL AND OVERLAY //////////////////////////////////
+  for (let x = 0; x < formBtns.length; x += 1) {
+    formBtns[x].addEventListener('click', () => {
+      event.preventDefault();
+      window.scrollTo({
+        behavior: 'smooth',
+        left: 0,
+        top: 0,
+      });
+      companyName1.innerHTML = formBtns[x].dataset.dealerinfo;
+      companyName2.innerHTML = formBtns[x].dataset.dealerinfo;
+      contactFormModal.classList.remove('hidden');
+      contactFormOverlay.classList.remove('hidden');
     });
   }
 
-  let change_showing = function(){
-    for (let y = 0; y < cards.length; y++){
-      cards[y].classList.remove('show-card');
-    }
-    let none_checked = true;
-    for (service in services){
-      if (services[service].show){
-        none_checked = false;
-        for (let z = 0; z < services[service].cards.length; z++){
-          services[service].cards[z].classList.add('show-card');
-        }
-      }
-    }
-    if (none_checked){
-      for (let i = 0; i < cards.length; i++){
-        cards[i].classList.add('show-card');
-      }
-    }
-  }
-  //////////////////////////////////////////////////////////////////////////////
-
-  // HIDE/SHOW CONTACT FORM MODAL AND OVERLAY //////////////////////////////////
-  for (let x = 0; x < form_btns.length; x++){
-    form_btns[x].addEventListener('click', function(){
-      event.preventDefault();
-      window.scrollTo({
-        'behavior': 'smooth',
-        'left': 0,
-        'top': 0
-      });
-      company_name_1.innerHTML = form_btns[x].dataset.dealerinfo;
-      company_name_2.innerHTML = form_btns[x].dataset.dealerinfo;
-      contact_form_modal.classList.remove("hidden");
-      contact_form_overlay.classList.remove('hidden');
-    })
-  }
-
-  contact_form_overlay.addEventListener('click', ()=>{
+  contactFormOverlay.addEventListener('click', () => {
     event.preventDefault();
-    contact_form_modal.classList.add("hidden");
-    contact_form_overlay.classList.add('hidden');
+    contactFormModal.classList.add('hidden');
+    contactFormOverlay.classList.add('hidden');
   });
-  //////////////////////////////////////////////////////////////////////////////
+  // ////////////////////////////////////////////////////////////////////////////
 
   // STYLE FRONT END FORM VALIDATION (GREEN CHECKMARK) /////////////////////////
-  for (let y = 0; y < contact_form_inputs.length; y++){
-    contact_form_inputs[y].addEventListener('change', function(){
-      if (contact_form_inputs[y].validity.valid && contact_form_inputs[y].nextElementSibling) {
-        contact_form_inputs[y].nextElementSibling.classList.add('checkmark-checked');
-      } else if (contact_form_inputs[y].nextElementSibling){
-        contact_form_inputs[y].nextElementSibling.classList.remove('checkmark-checked');
+  for (let y = 0; y < contactFormInputs.length; y += 1) {
+    contactFormInputs[y].addEventListener('change', () => {
+      if (contactFormInputs[y].validity.valid && contactFormInputs[y].nextElementSibling) {
+        contactFormInputs[y].nextElementSibling.classList.add('checkmark-checked');
+      } else if (contactFormInputs[y].nextElementSibling) {
+        contactFormInputs[y].nextElementSibling.classList.remove('checkmark-checked');
       }
-    })
+    });
   }
-  //////////////////////////////////////////////////////////////////////////////
-
+  // ////////////////////////////////////////////////////////////////////////////
 });
