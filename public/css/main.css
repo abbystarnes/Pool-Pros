@@ -735,6 +735,10 @@ input:focus:invalid {
       transition: all .25s ease;
       background-image: url("../img/next-arrow-white.png"); }
 
+  .contact-form-modal .modal-body .container-form-input-ownership .label-radio .radio-no {
+    margin-left: 5px; }
+  .contact-form-modal .modal-body .container-form-input-ownership .label-radio .radio-yes {
+    margin-left: 3px; }
   .contact-form-modal .modal-body .container-form-input-ownership input[type=radio] {
     transition: all 0s;
     height: 2em;

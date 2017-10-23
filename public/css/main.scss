@@ -949,6 +949,12 @@ input:focus:invalid {
     }
   }
   .contact-form-modal .modal-body .container-form-input-ownership {
+      .label-radio .radio-no {
+        margin-left: 5px;
+      }
+      .label-radio .radio-yes {
+        margin-left: 3px;
+      }
       input[type=radio] {
         transition: all 0s;
         height: 2em;
