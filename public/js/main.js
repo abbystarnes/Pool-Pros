@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const contactFormOverlay = document.getElementById('contact-form-overlay');
   const companyName1 = document.getElementById('company-name-1');
   const companyName2 = document.getElementById('company-name-2');
-  // ////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW MOBILE NAV //////////////////////////////////////////////////////
   btnCloseNav.addEventListener('click', () => {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     nav.classList.add('hidden');
     overlay.classList.add('hidden');
   });
-  // ////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
 
   // FILTER BUSINESS CARDS /////////////////////////////////////////////////////
   const services = {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     },
   };
 
-
+  // populate object literal with the business cards that belong to each category
   for (let x = 0; x < cards.length; x += 1) {
     const card = cards[x];
     const cardServices = card.getElementsByClassName('card-service')[0].dataset.certifications.split(',');
@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  // function to hide/show selected categories, and show all cards if no categories selected
   const changeShowing = function () {
     for (let y = 0; y < cards.length; y += 1) {
       cards[y].classList.remove('show-card');
@@ -86,6 +87,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   };
 
+  // attaches click event to each checkbox, toggles selected category & runs changeShowing() function to update view
   for (let x = 0; x < checkboxes.length; x += 1) {
     checkboxes[x].addEventListener('mousedown', () => {
       if (!checkboxes[x].checked) {
@@ -96,9 +98,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       changeShowing();
     });
   }
-  // ////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW CONTACT FORM MODAL AND OVERLAY //////////////////////////////////
+
+  // add click event to business card buttons to show contact form modal & overlay, populate with business information
   for (let x = 0; x < formBtns.length; x += 1) {
     formBtns[x].addEventListener('click', () => {
       event.preventDefault();
@@ -114,12 +118,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
+  // closes contact form modal when user clicks anywhere on overlay
   contactFormOverlay.addEventListener('click', () => {
     event.preventDefault();
     contactFormModal.classList.add('hidden');
     contactFormOverlay.classList.add('hidden');
   });
-  // ////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
 
   // STYLE FRONT END FORM VALIDATION (GREEN CHECKMARK) /////////////////////////
   for (let y = 0; y < contactFormInputs.length; y += 1) {
@@ -131,5 +136,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   }
-  // ////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////
 });

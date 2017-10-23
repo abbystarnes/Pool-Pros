@@ -114,6 +114,9 @@ ul {
   background-position: center;
   background-color: transparent;
   border: none;
+  &:active, &:focus {
+    background-image: url('../img/menu-icon-mobile-teal.png');
+  }
 }
 
 .nav {
@@ -142,8 +145,9 @@ ul {
     color: $blue;
   }
   button {
-    transition: all .25s ease-in-out;
-    padding: 5px 7px;
+    transition: all .0s;
+    padding: 6px 10px;
+    padding-top: 10px;
     margin: 0;
     position: absolute;
     right: 2.5%;
@@ -153,9 +157,10 @@ ul {
     background-color: $white;
     color: $teal;
     &:focus, &:active {
+      background-color: $teal;
       i {
-        transition: all .25s ease-in-out;
-        color: $teal-active;
+        transition: all 0s;
+        color: $white;
       }
     }
   }
@@ -185,17 +190,11 @@ ul {
       color: $grey;
       font-size: 1.125em;
       font-weight: 600;
-      &:focus {
-        transition: all .25s ease-in-out;
-        background-color: $lt-grey-hov;
-      }
-      &:active {
-        transition: all .25s ease-in-out;
-        color: $grey-active;
-        i {
-          transition: all .25s ease-in-out;
-          color: $teal-active;
-        }
+      &:focus, &:active {
+        transition: all 0s;
+        background-color: $teal;
+        background-image: url('../img/next-arrow-white.png');
+        color: $white;
       }
       i {
         transition: all .25s ease-in-out;
@@ -832,12 +831,6 @@ input:focus:invalid {
 }
 
 @media screen and (min-width: 590px){
-    // .dealer-cards .card {
-    //   width: 48.75%;
-    //   &:nth-child(odd){
-    //     margin-right: 2.5%;
-    //   }
-    // }
     .dealer-cards {
       margin-right: 0;
       .card {
@@ -963,15 +956,37 @@ input:focus:invalid {
         padding: 0;
         font-size: 1em;
         line-height: 3.5em;
-        transition: all .25s ease-in-out;
+        position: relative;
 
         &:hover {
           background-color: $white;
           color: $blue-light;
-          transition: all .25s ease-in-out;
+          transition: all 0s;
+          background-image: none;
+
+          &:after {
+            content: '';
+            height: 3px;
+            left: 1px;
+            right: 1px;
+            bottom: 32px;
+            position: absolute;
+            background-color: $blue-light;
+          }
         }
         &:active, &:focus {
           background-color: $white;
+          color: $blue-light;
+          background-image: none;
+          &:after {
+            content: '';
+            height: 3px;
+            left: 1px;
+            right: 1px;
+            bottom: 32px;
+            position: absolute;
+            background-color: $blue-light;
+          }
         }
       }
     }
