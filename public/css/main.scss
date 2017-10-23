@@ -1,58 +1,64 @@
-// global SASS color & font variables
+// SASS COLOR VARIABLES ////////////////////////////////////////////////////////
 $white: #fff;
 $grey: #616161;
 $grey-dark: #3f3f3f;
 $grey-active: #393939;
-$blue: #01529e;
-$blue-light: #216ddf;
-$teal: #0bc9c8;
-$teal-active: #0badac;
+$grey-form: #bebebe;
 $lt-grey: #f6f6f6;
 $lt-grey-hov: #efefef;
 $tool-tip-grey: #d8d8d8;
-$grey-form: #bebebe;
+$blue: #01529e;
+$blue-light: rgba(33, 109, 223, 1);
+$blue-active: rgba(33, 109, 223, .5);
+$teal: #0bc9c8;
+$teal-active: #0badac;
 $break-line: #ececec;
+////////////////////////////////////////////////////////////////////////////////
 
-
+// SET WIDTH AND HEIGHT PROPERTIES TO INCLUDE PADDING AND BORDER ///////////////
 * {
   box-sizing: border-box;
 }
+////////////////////////////////////////////////////////////////////////////////
 
+// SASS FONT MIXINS - LOAD LOCAL OPEN SANS FONT FILES //////////////////////////
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Semibold.tff') format('tff');
+  src: local('Open Sans'), local('Open Sans'), url('../fonts/open-sans/OpenSans-Semibold.tff') format('tff');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Regular.tff') format('tff');
+  src: local('Open Sans'), local('Open Sans'), url('../fonts/open-sans/OpenSans-Regular.tff') format('tff');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 100;
-  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Light.tff') format('tff');
+  src: local('Open Sans'), local('Open Sans'), url('../fonts/open-sans/OpenSans-Light.tff') format('tff');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Bold.tff') format('tff');
+  src: local('Open Sans'), local('Open Sans'), url('../fonts/open-sans/OpenSans-Bold.tff') format('tff');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: normal;
-  src: local('Open Sans'), local('Open Sans'), url('./fonts/open-sans/OpenSans-Italic.tff') format('tff');
+  src: local('Open Sans'), local('Open Sans'), url('../fonts/open-sans/OpenSans-Italic.tff') format('tff');
 }
+////////////////////////////////////////////////////////////////////////////////
 
+// SET DEFAULT STYLINGS, WRAPPER, OVERLAY FOR MODALS ///////////////////////////
 .wrapper-inner {
   max-width: 1440px;
   margin: 0 auto;
@@ -93,9 +99,9 @@ ul {
   bottom:0;
   display:block;
 }
+////////////////////////////////////////////////////////////////////////////////
 
-// mobile navigation pop-up menu
-
+// MOBILE NAVIGATION ///////////////////////////////////////////////////////////
 .hamburger {
   position: absolute;
   right: .25em;
@@ -202,9 +208,9 @@ ul {
     }
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
-// headers
-
+// HEADERS /////////////////////////////////////////////////////////////////////
 .header-1 {
   display: none;
   a {
@@ -242,14 +248,12 @@ ul {
   visibility: hidden;
 }
 
-// buttons
-
-.btn {
-  transition: all .25s ease-in-out;
+.btn-find-a-pro {
+  transition: all 0s;
   background-color: transparent;
   padding: .44em .6875em;
   padding-top: calc(.44em + 3px);
-  border: 1.5px solid $blue-light;
+  border: 1.25px solid $blue-light;
   border-radius: 3px;
   font-size: .6875em;
   text-transform: uppercase;
@@ -257,13 +261,19 @@ ul {
   vertical-align: top;
   color: $blue-light;
 
-  &:active, &:focus {
-    transition: all .25s ease-in-out;
-    background-color: $lt-grey-hov;
+  &:focus {
+    .icon-location {
+      transition-duration: 0s;
+      background-image: url('../img/location-icon-white.png');
+    }
+    background-color: $blue-light;
+    color: $white;
   }
-}
 
-.btn-find-a-pro {
+  &:active {
+    background-color: $blue-light;
+  }
+
   float: right;
   margin-right: calc(58px);
   margin-top: calc(4em - 30.5px);
@@ -279,9 +289,9 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+////////////////////////////////////////////////////////////////////////////////
 
-
-// footers
+// FOOTERS /////////////////////////////////////////////////////////////////////
 .footer {
   color: $white;
   a {
@@ -364,8 +374,9 @@ ul {
     }
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
-// dealers & filtering section
+/// BUSINESS CARDS & FILTER ////////////////////////////////////////////////////
 .filter-bar {
   background-color: $lt-grey;
   border-radius: 10px;
@@ -431,7 +442,6 @@ ul {
           vertical-align: middle;
         }
         input:checked {
-          // background-color: $blue-light;
           border: 8px inset $blue-light;
           border-style: solid inset solid solid;
         }
@@ -467,7 +477,6 @@ ul {
         top: 2.5em;
         color: $grey;
         line-height: 1.4;
-        // border: 1px solid $blue-light;
         border-radius: 3px;
         -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
         -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.29);
@@ -527,12 +536,9 @@ ul {
         margin: 0;
         color: $grey;
         text-align: center;
-        // margin-bottom: 0;
-        // padding-bottom: 1em;
       }
     }
     .card-info {
-      // padding-top: .5em;
       padding-left: 5%;
       padding-right: 5%;
     }
@@ -556,25 +562,41 @@ ul {
     }
 
     .btn-contact-form {
-      transition: all .25s ease-in-out;
       display: block;
       margin: 0 auto;
-      border: 1px solid $teal;
+      border: 1.25px solid $teal;
       border-radius: 3px;
       color: $blue;
       padding: 1em;
       font-weight: bold;
       background-color: $white;
       margin-bottom: 2.5em;
-      &:focus, &:active {
-          transition: all .25s ease-in-out;
-          background-color: $lt-grey;
-      }
       .email-icon {
         height: 1em;
-        vertical-align: text-top;
-        margin-right: 1em;
+        width: 1em;
+        vertical-align: text-bottom;
+        margin-right: .75em;
+        background-image: url("../img/email-icon.png");
+        background-size: contain;
+        display: inline-block;
+        background-repeat: no-repeat;
       }
+      &:focus {
+          transition: all 0s;
+          background-color: $teal;
+          color: $white;
+          .email-icon {
+            background-image: url('../img/email-icon-white.png');
+          }
+      }
+      &:active {
+        transition: all 0s;
+        background-color: $teal;
+        .email-icon {
+          background-image: url('../img/email-icon-white.png');
+        }
+      }
+
     }
     h4 {
       text-align: center;
@@ -620,10 +642,9 @@ ul {
     display: inline-block;
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
-
-// contact form modal
-
+// MODAL CONTACT FORM ///////////////////////////////////////////////////////
 .contact-form-modal {
   max-width: 700px;
   margin: 0 auto;
@@ -702,7 +723,6 @@ ul {
 
 
     .container-form-input-ownership {
-
       border-bottom: 2px solid $break-line;
       padding-bottom: 1.5em;
 
@@ -728,10 +748,10 @@ ul {
         &::after {
           content: '';
           position: absolute;
-          top: 0;
+          top: -1px;
           left: -1px;
-          right: 1px;
-          bottom: 0;
+          right: 0;
+          bottom:0;
           background-color: $tool-tip-grey;
           border: 1px solid black;
           border-radius: 2px;
@@ -748,7 +768,6 @@ ul {
     }
 
     .btn-contact-form-submit {
-      transition: all .25s ease-in-out;
       margin-top: 1em;
       background-color: $white;
       color: $teal;
@@ -758,8 +777,9 @@ ul {
       border: none;
       padding: 1em;
       &:focus, &:active {
-        transition: all .25s ease-in-out;
-        background-color: $lt-grey-hov;
+        transition: all .0s;
+        background-color: $teal;
+        color: $white;
       }
     }
   }
@@ -796,9 +816,9 @@ ul {
 input:focus:invalid {
   outline: none;
 }
+////////////////////////////////////////////////////////////////////////////////
 
-
-/// MEDIA QUERIES
+/// MEDIA QUERIES //////////////////////////////////////////////////////////////
 @media screen and (min-width: 400px){
   .header-2 {
     height: 3.6em;
@@ -809,8 +829,6 @@ input:focus:invalid {
       height: 1.75em;
     }
   }
-
-
 }
 
 @media screen and (min-width: 590px){
@@ -822,20 +840,24 @@ input:focus:invalid {
     }
 }
 
-
-
 @media screen and (min-width: 785px){
 
   .card .btn-contact-form {
     &:hover {
-      transition: all .25s ease-in-out;
-      background-color: #f6f6f6;
+      transition: all .25s ease;
+      background-color: $teal;
+      color: $white;
+      .email-icon {
+        transition: all .25s ease;
+        background-image: url('../img/email-icon-white.png');
+      }
     }
   }
 
   .contact-form-modal .btn-contact-form-submit:hover {
-    transition: all .25s ease-in-out;
-    background-color: #efefef;
+    transition: all .25s ease;
+    background-color: $teal;
+    color: $white;
   }
   .header-1 {
     display: block;
@@ -885,8 +907,13 @@ input:focus:invalid {
     .btn-find-a-pro {
       margin-top: calc(6.25em - 33.5px);
       &:hover {
-        transition: all .25s ease-in-out;
-        background-color: #efefef;
+        transition: all .25s ease;
+        background-color: $blue-light;
+        color: $white;
+        .icon-location {
+          transition: all .25s ease;
+          background-image: url('../img/location-icon-white.png');
+        }
       }
     }
   }
@@ -919,7 +946,6 @@ input:focus:invalid {
       border: none;
       display: inline-block;
       text-align: center;
-      // margin-right: 1em;
       &:last-child {
         margin-right: 0;
       }
@@ -955,7 +981,6 @@ input:focus:invalid {
 
     .title-filter {
       display: inline-block;
-      // margin-left: 2em;
     }
     .checkboxes-filter {
       min-width: 535px;
@@ -987,12 +1012,9 @@ input:focus:invalid {
       margin-right: 2.5%;
     }
 }
-//1.6667
-// 31.333
+
 @media screen and (min-width: 1300px){
   .filter-bar {
-    // margin-left: 0;
-    // margin-right: 0;
     text-align: inherit;
     padding-left: 10%;
     padding-right: 10%;
@@ -1020,6 +1042,7 @@ input:focus:invalid {
     }
   }
 }
+
 @media screen and (min-width: 1440px){
   .filter-bar{
     margin-left: 0;
@@ -1037,3 +1060,5 @@ input:focus:invalid {
     padding-top: 9em;
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////

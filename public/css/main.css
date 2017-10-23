@@ -5,31 +5,31 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Semibold.tff") format("tff"); }
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/open-sans/OpenSans-Semibold.tff") format("tff"); }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Regular.tff") format("tff"); }
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/open-sans/OpenSans-Regular.tff") format("tff"); }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 100;
-  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Light.tff") format("tff"); }
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/open-sans/OpenSans-Light.tff") format("tff"); }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/open-sans/OpenSans-Bold.tff") format("tff"); }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: normal;
-  src: local("Open Sans"), local("Open Sans"), url("./fonts/open-sans/OpenSans-Italic.tff") format("tff"); }
+  src: local("Open Sans"), local("Open Sans"), url("../fonts/open-sans/OpenSans-Italic.tff") format("tff"); }
 
 .wrapper-inner {
   max-width: 1440px;
@@ -187,26 +187,29 @@ ul {
   opacity: 0;
   visibility: hidden; }
 
-.btn {
-  transition: all .25s ease-in-out;
+.btn-find-a-pro {
+  transition: all 0s;
   background-color: transparent;
   padding: .44em .6875em;
   padding-top: calc(.44em + 3px);
-  border: 1.5px solid #216ddf;
+  border: 1.25px solid #216ddf;
   border-radius: 3px;
   font-size: .6875em;
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: top;
-  color: #216ddf; }
-  .btn:active, .btn:focus {
-    transition: all .25s ease-in-out;
-    background-color: #efefef; }
-
-.btn-find-a-pro {
+  color: #216ddf;
   float: right;
   margin-right: calc(58px);
   margin-top: calc(4em - 30.5px); }
+  .btn-find-a-pro:focus {
+    background-color: #216ddf;
+    color: white; }
+    .btn-find-a-pro:focus .icon-location {
+      transition-duration: 0s;
+      background-image: url("../img/location-icon-white.png"); }
+  .btn-find-a-pro:active {
+    background-color: #216ddf; }
 
 .icon-location {
   height: 1.5em;
@@ -440,23 +443,35 @@ ul {
       text-align: center;
       margin-bottom: 2.167em; }
     .dealer-cards .card .btn-contact-form {
-      transition: all .25s ease-in-out;
       display: block;
       margin: 0 auto;
-      border: 1px solid #0bc9c8;
+      border: 1.25px solid #0bc9c8;
       border-radius: 3px;
       color: #01529e;
       padding: 1em;
       font-weight: bold;
       background-color: white;
       margin-bottom: 2.5em; }
-      .dealer-cards .card .btn-contact-form:focus, .dealer-cards .card .btn-contact-form:active {
-        transition: all .25s ease-in-out;
-        background-color: #f6f6f6; }
       .dealer-cards .card .btn-contact-form .email-icon {
         height: 1em;
-        vertical-align: text-top;
-        margin-right: 1em; }
+        width: 1em;
+        vertical-align: text-bottom;
+        margin-right: .75em;
+        background-image: url("../img/email-icon.png");
+        background-size: contain;
+        display: inline-block;
+        background-repeat: no-repeat; }
+      .dealer-cards .card .btn-contact-form:focus {
+        transition: all 0s;
+        background-color: #0bc9c8;
+        color: white; }
+        .dealer-cards .card .btn-contact-form:focus .email-icon {
+          background-image: url("../img/email-icon-white.png"); }
+      .dealer-cards .card .btn-contact-form:active {
+        transition: all 0s;
+        background-color: #0bc9c8; }
+        .dealer-cards .card .btn-contact-form:active .email-icon {
+          background-image: url("../img/email-icon-white.png"); }
     .dealer-cards .card h4 {
       text-align: center;
       margin-bottom: .5em; }
@@ -573,9 +588,9 @@ ul {
         .contact-form-modal .modal-body .container-form-input-ownership input[type=radio]::after {
           content: '';
           position: absolute;
-          top: 0;
+          top: -1px;
           left: -1px;
-          right: 1px;
+          right: 0;
           bottom: 0;
           background-color: #d8d8d8;
           border: 1px solid black;
@@ -584,7 +599,6 @@ ul {
         background-color: white;
         border: 4.5px solid #216ddf; }
     .contact-form-modal .modal-body .btn-contact-form-submit {
-      transition: all .25s ease-in-out;
       margin-top: 1em;
       background-color: white;
       color: #0bc9c8;
@@ -594,8 +608,9 @@ ul {
       border: none;
       padding: 1em; }
       .contact-form-modal .modal-body .btn-contact-form-submit:focus, .contact-form-modal .modal-body .btn-contact-form-submit:active {
-        transition: all .25s ease-in-out;
-        background-color: #efefef; }
+        transition: all .0s;
+        background-color: #0bc9c8;
+        color: white; }
   .contact-form-modal h4 {
     margin: 0;
     text-transform: uppercase;
@@ -637,12 +652,17 @@ input:focus:invalid {
       margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
   .card .btn-contact-form:hover {
-    transition: all .25s ease-in-out;
-    background-color: #f6f6f6; }
+    transition: all .25s ease;
+    background-color: #0bc9c8;
+    color: white; }
+    .card .btn-contact-form:hover .email-icon {
+      transition: all .25s ease;
+      background-image: url("../img/email-icon-white.png"); }
 
   .contact-form-modal .btn-contact-form-submit:hover {
-    transition: all .25s ease-in-out;
-    background-color: #efefef; }
+    transition: all .25s ease;
+    background-color: #0bc9c8;
+    color: white; }
 
   .header-1 {
     display: block;
@@ -683,8 +703,12 @@ input:focus:invalid {
     .header-2 .btn-find-a-pro {
       margin-top: calc(6.25em - 33.5px); }
       .header-2 .btn-find-a-pro:hover {
-        transition: all .25s ease-in-out;
-        background-color: #efefef; }
+        transition: all .25s ease;
+        background-color: #216ddf;
+        color: white; }
+        .header-2 .btn-find-a-pro:hover .icon-location {
+          transition: all .25s ease;
+          background-image: url("../img/location-icon-white.png"); }
 
   .hamburger {
     display: none; }
