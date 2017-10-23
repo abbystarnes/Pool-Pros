@@ -646,9 +646,10 @@ input:focus:invalid {
     .header-2 .logo {
       height: 1.75em; } }
 @media screen and (min-width: 590px) {
-  .dealer-cards .card {
-    width: 48.75%; }
-    .dealer-cards .card:nth-child(odd) {
+  .dealer-cards {
+    margin-right: 0; }
+    .dealer-cards .card {
+      width: 47.50%;
       margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
   .card .btn-contact-form:hover {

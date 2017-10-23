@@ -832,9 +832,16 @@ input:focus:invalid {
 }
 
 @media screen and (min-width: 590px){
-    .dealer-cards .card {
-      width: 48.75%;
-      &:nth-child(odd){
+    // .dealer-cards .card {
+    //   width: 48.75%;
+    //   &:nth-child(odd){
+    //     margin-right: 2.5%;
+    //   }
+    // }
+    .dealer-cards {
+      margin-right: 0;
+      .card {
+        width: 47.50%;
         margin-right: 2.5%;
       }
     }
