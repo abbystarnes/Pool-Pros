@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const contactFormOverlay = document.getElementById('contact-form-overlay');
   const companyName1 = document.getElementById('company-name-1');
   const companyName2 = document.getElementById('company-name-2');
+  const contactTel = document.getElementById('contact-tel');
   ///////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW MOBILE NAV //////////////////////////////////////////////////////
@@ -129,6 +130,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // STYLE FRONT END FORM VALIDATION (GREEN CHECKMARK) /////////////////////////
   for (let y = 0; y < contactFormInputs.length; y += 1) {
     contactFormInputs[y].addEventListener('change', () => {
+      if (contactFormInputs[y] === contactTel){
+        contactTel.value = contactTel.value.replace(/[^\d]/g,'');
+      }
       if (contactFormInputs[y].validity.valid && contactFormInputs[y].nextElementSibling) {
         contactFormInputs[y].nextElementSibling.classList.add('checkmark-checked');
       } else if (contactFormInputs[y].nextElementSibling) {
