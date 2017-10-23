@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const contactTel = document.getElementById('contact-tel');
   const btnContactFormSubmit = document.getElementById('btn-contact-form-submit');
   const modalBody = document.getElementById('modal-body');
+  const btnCloseModal = document.getElementById('btn-close-modal');
   ///////////////////////////////////////////////////////////////////////////////
 
   // HIDE/SHOW MOBILE NAV //////////////////////////////////////////////////////
@@ -121,12 +122,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  // closes contact form modal when user clicks anywhere on overlay
+  // closes contact form modal when user clicks anywhere on overlay or 'X'
   contactFormOverlay.addEventListener('click', () => {
     event.preventDefault();
     contactFormModal.classList.add('hidden');
     contactFormOverlay.classList.add('hidden');
   });
+
+  btnCloseModal.addEventListener('click', ()=> {
+    event.preventDefault();
+    contactFormModal.classList.add('hidden');
+    contactFormOverlay.classList.add('hidden');
+  })
   ///////////////////////////////////////////////////////////////////////////////
 
   // STYLE FRONT END FORM VALIDATION (GREEN CHECKMARK) /////////////////////////

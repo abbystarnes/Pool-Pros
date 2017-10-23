@@ -1,12 +1,13 @@
 <div id="contact-form-overlay" class="overlay hidden"></div>
 <div id="contact-form-modal" class="contact-form-modal hidden">
+  <button class='btn-close-modal'><i id="btn-close-modal" class="ss-delete"></i></button>
   <div class='modal-header'>
     <h4>Email</h4>
     <h3 id='company-name-1'></h3>
   </div>
   <div class='modal-body'>
+    <p>Fill out the form below and <span id="company-name-2"></span> will get in touch.</p>
     <form id="contact-form" class="contact-form" action="">
-      <p>Fill out the form below and <span id="company-name-2"></span> will get in touch.</p>
 
       <div class='container-form-input'>
         <label for="name">First and last name</label>
@@ -31,13 +32,17 @@
       <textarea class='comments'></textarea>
 
       <div class='container-form-input container-form-input-ownership'>
+        <p class='input-info'>optional</p>
         <label class='label-ownership' for='ownership-status'> Do you currently own a pool or spa? </label>
-        <label class='label-radio'> <input type="radio" name="ownership-status" value="Yes"> Yes </label>
-        <label class='label-radio'> <input type="radio" name="ownership-status" value="No"> No </label>
+        <label class='label-radio'> <input type="radio" name="ownership-status" value="Yes"><span>Yes</span></label>
+        <label class='label-radio'> <input type="radio" name="ownership-status" value="No"><span>No</span></label>
       </div>
-      <button class='btn-contact-form-submit' type='submit'>Send</button>
-      </ul>
+      <div class='button-holder'>
+        <button class='btn-contact-form-submit' type='submit'>Send<span class='send-desktop-text'> my email</span></button>
+      </div>
     </form>
   </div>
-
+  <div class='modal-footer'>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+  </div>
 </div>

@@ -680,8 +680,26 @@ ul {
   right: 5%;
   background-color: $white;
 
+  .btn-close-modal {
+    background-color: $blue;
+    color: $white;
+    font-size: 1.5em;
+    padding: .75em;
+    float:right;
+    border: none;
+    display: none;
+  }
+  .send-desktop-text {
+    display:none;
+  }
   label {
     position: relative;
+  }
+  .modal-footer{
+    background-color: $lt-grey;
+    color: $grey;
+    padding: 1em 5% 2em 5%;
+    display:none;
   }
   .modal-header{
     background-color: $blue;
@@ -867,6 +885,110 @@ input:focus:invalid {
 }
 
 @media screen and (min-width: 785px){
+  .contact-form-modal {
+    .modal-header{
+      padding-top: 2em;
+    }
+    .btn-close-modal{
+      display: inline;
+      padding: .5em .8em;
+      padding-top: calc(.5em + 10px);
+      transition: all .2s ease;
+      &:hover, &:active, &:focus {
+        transition: all .2s ease;
+        background-color: $white;
+        color: $teal;
+      }
+    }
+  }
+  .contact-form {
+    padding: 1.5em;
+    background-color: $lt-grey;
+  }
+  .contact-form-modal .modal-footer{
+    display: block;
+    padding-bottom: 1em;
+    p {
+      font-size: .78125em;
+      line-height: 1.6;
+    }
+  }
+  .contact-form-modal .modal-body {
+    .button-holder {
+      text-align: center;
+    }
+    .send-desktop-text {
+      display:inline;
+    }
+    .btn-contact-form-submit {
+      color: $grey;
+      background-color: $lt-grey;
+      padding-right: 2em;
+      position: relative;
+      float:unset;
+      margin-bottom: 0;
+      margin-top: 1.5em;
+      &:after {
+        position: absolute;
+        right: .5em;
+        bottom: 1.15em;
+        content: '';
+        width: 1em;
+        height: 1em;
+        background-image: url('../img/next-arrow.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all .25s ease;
+      }
+      &:hover, &:active, &:focus {
+        &:after{
+          transition: all .25s ease;
+          background-image: url('../img/next-arrow-white.png');
+        }
+      }
+    }
+  }
+  .contact-form-modal .modal-body .container-form-input-ownership {
+      input[type=radio] {
+        transition: all 0s;
+        height: 2em;
+        width: 4em;
+        margin-top: .75em;
+        margin-right: 0;
+        &::after {
+          transition: all 0s;
+          padding-top: .35em;
+          text-align: center;
+          color: black;
+          background-color: $white;
+          border: 1px solid black;
+          border-radius: 3px;
+        }
+      }
+
+      input[type=radio] + span{
+        font-weight: 100;
+        transition: all 0s;
+        position: absolute;
+        bottom: 9px;
+        left: 14px;
+        background-image: none;
+      }
+      input[type=radio]:checked{
+        transition: all 0s;
+        &::after {
+          transition: all 0s;
+          background-color: $teal;
+          border: 1px solid black;
+          color: $white;
+        }
+      }
+      input[type=radio]:checked + span{
+        transition: all 0s;
+        color: $white;
+      }
+  }
+
   .footer-1 .logo, .header-2 .logo {
     transition: all .25s ease;
     &:hover {

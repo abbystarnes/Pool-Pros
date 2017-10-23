@@ -536,8 +536,23 @@ ul {
   left: 5%;
   right: 5%;
   background-color: white; }
+  .contact-form-modal .btn-close-modal {
+    background-color: #01529e;
+    color: white;
+    font-size: 1.5em;
+    padding: .75em;
+    float: right;
+    border: none;
+    display: none; }
+  .contact-form-modal .send-desktop-text {
+    display: none; }
   .contact-form-modal label {
     position: relative; }
+  .contact-form-modal .modal-footer {
+    background-color: #f6f6f6;
+    color: #616161;
+    padding: 1em 5% 2em 5%;
+    display: none; }
   .contact-form-modal .modal-header {
     background-color: #01529e;
     color: white;
@@ -670,6 +685,88 @@ input:focus:invalid {
       width: 47.50%;
       margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
+  .contact-form-modal .modal-header {
+    padding-top: 2em; }
+  .contact-form-modal .btn-close-modal {
+    display: inline;
+    padding: .5em .8em;
+    padding-top: calc(.5em + 10px);
+    transition: all .2s ease; }
+    .contact-form-modal .btn-close-modal:hover, .contact-form-modal .btn-close-modal:active, .contact-form-modal .btn-close-modal:focus {
+      transition: all .2s ease;
+      background-color: white;
+      color: #0bc9c8; }
+
+  .contact-form {
+    padding: 1.5em;
+    background-color: #f6f6f6; }
+
+  .contact-form-modal .modal-footer {
+    display: block;
+    padding-bottom: 1em; }
+    .contact-form-modal .modal-footer p {
+      font-size: .78125em;
+      line-height: 1.6; }
+
+  .contact-form-modal .modal-body .button-holder {
+    text-align: center; }
+  .contact-form-modal .modal-body .send-desktop-text {
+    display: inline; }
+  .contact-form-modal .modal-body .btn-contact-form-submit {
+    color: #616161;
+    background-color: #f6f6f6;
+    padding-right: 2em;
+    position: relative;
+    float: unset;
+    margin-bottom: 0;
+    margin-top: 1.5em; }
+    .contact-form-modal .modal-body .btn-contact-form-submit:after {
+      position: absolute;
+      right: .5em;
+      bottom: 1.15em;
+      content: '';
+      width: 1em;
+      height: 1em;
+      background-image: url("../img/next-arrow.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: all .25s ease; }
+    .contact-form-modal .modal-body .btn-contact-form-submit:hover:after, .contact-form-modal .modal-body .btn-contact-form-submit:active:after, .contact-form-modal .modal-body .btn-contact-form-submit:focus:after {
+      transition: all .25s ease;
+      background-image: url("../img/next-arrow-white.png"); }
+
+  .contact-form-modal .modal-body .container-form-input-ownership input[type=radio] {
+    transition: all 0s;
+    height: 2em;
+    width: 4em;
+    margin-top: .75em;
+    margin-right: 0; }
+    .contact-form-modal .modal-body .container-form-input-ownership input[type=radio]::after {
+      transition: all 0s;
+      padding-top: .35em;
+      text-align: center;
+      color: black;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 3px; }
+  .contact-form-modal .modal-body .container-form-input-ownership input[type=radio] + span {
+    font-weight: 100;
+    transition: all 0s;
+    position: absolute;
+    bottom: 9px;
+    left: 14px;
+    background-image: none; }
+  .contact-form-modal .modal-body .container-form-input-ownership input[type=radio]:checked {
+    transition: all 0s; }
+    .contact-form-modal .modal-body .container-form-input-ownership input[type=radio]:checked::after {
+      transition: all 0s;
+      background-color: #0bc9c8;
+      border: 1px solid black;
+      color: white; }
+  .contact-form-modal .modal-body .container-form-input-ownership input[type=radio]:checked + span {
+    transition: all 0s;
+    color: white; }
+
   .footer-1 .logo, .header-2 .logo {
     transition: all .25s ease; }
     .footer-1 .logo:hover, .header-2 .logo:hover {
