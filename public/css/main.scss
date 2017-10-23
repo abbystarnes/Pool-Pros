@@ -741,6 +741,9 @@ ul {
       margin-bottom: 0;
       line-height: 2;
     }
+    input[type=radio] + span{
+      background-image: none;
+    }
     input::placeholder {
       color: $grey-form;
       font-weight: 100;
