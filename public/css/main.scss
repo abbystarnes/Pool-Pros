@@ -231,6 +231,9 @@ ul {
   }
   .logo {
     height: 1.25em;
+    &:active, &:focus {
+      opacity: .5;
+    }
   }
   height: 3.5em;
   padding-left: 2.5%;
@@ -307,20 +310,12 @@ ul {
     height: 26px;
     width: 188px;
     margin-bottom: .5em;
+    &:active, &:focus {
+      opacity: .5;
+    }
   }
 
-  .icon-twitter {
-    width: 22px;
-    height: 18px;
-  }
-  .icon-facebook {
-    width: 12px;
-    height: 23px;
-  }
-  .icon-youtube {
-    width: 21px;
-    height: 25px;
-  }
+
   .connect {
     font-size: .938em;
     text-transform: uppercase;
@@ -339,6 +334,37 @@ ul {
         margin-right: 0;
       }
     }
+
+    i {
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .icon-twitter {
+      background-image: url('../img/twitter-icon.png');
+      &:active, &:focus {
+        background-image: url('../img/twitter-icon-white.png');
+      }
+      width: 22px;
+      height: 18px;
+    }
+    .icon-facebook {
+      background-image: url('../img/facebook-icon.png');
+      &:active, &:focus {
+        background-image: url('../img/facebook-icon-white.png');
+      }
+      width: 12px;
+      height: 23px;
+    }
+    .icon-youtube {
+      background-image: url('../img/youtube-icon.png');
+      &:active, &:focus {
+        background-image: url('../img/youtube-icon-white.png');
+      }
+      width: 21px;
+      height: 25px;
+    }
+
   }
 
 }
@@ -841,6 +867,30 @@ input:focus:invalid {
 }
 
 @media screen and (min-width: 785px){
+  .footer-1 .logo, .header-2 .logo {
+    transition: all .25s ease;
+    &:hover {
+      transition: all .25s ease;
+      opacity: .5;
+    }
+  }
+  .footer-1 .list-social {
+    a {
+      transition: all .25s ease;
+      &:hover {
+        transition: all .25s ease;
+        .icon-twitter {
+          background-image: url('../img/twitter-icon-white.png');
+        }
+        .icon-facebook {
+          background-image: url('../img/facebook-icon-white.png');
+        }
+        .icon-youtube {
+          background-image: url('../img/youtube-icon-white.png');
+        }
+      }
+    }
+  }
 
   .card .btn-contact-form {
     &:hover {

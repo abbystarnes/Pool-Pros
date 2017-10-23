@@ -182,6 +182,8 @@ ul {
     line-height: 4em; }
   .header-2 .logo {
     height: 1.25em; }
+    .header-2 .logo:active, .header-2 .logo:focus {
+      opacity: .5; }
 
 .hidden {
   transition: all .25s ease-out;
@@ -236,15 +238,8 @@ ul {
     height: 26px;
     width: 188px;
     margin-bottom: .5em; }
-  .footer-1 .icon-twitter {
-    width: 22px;
-    height: 18px; }
-  .footer-1 .icon-facebook {
-    width: 12px;
-    height: 23px; }
-  .footer-1 .icon-youtube {
-    width: 21px;
-    height: 25px; }
+    .footer-1 .logo:active, .footer-1 .logo:focus {
+      opacity: .5; }
   .footer-1 .connect {
     font-size: .938em;
     text-transform: uppercase;
@@ -260,6 +255,28 @@ ul {
       margin-right: .5em; }
       .footer-1 .list-social li:last-child {
         margin-right: 0; }
+    .footer-1 .list-social i {
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .footer-1 .list-social .icon-twitter {
+      background-image: url("../img/twitter-icon.png");
+      width: 22px;
+      height: 18px; }
+      .footer-1 .list-social .icon-twitter:active, .footer-1 .list-social .icon-twitter:focus {
+        background-image: url("../img/twitter-icon-white.png"); }
+    .footer-1 .list-social .icon-facebook {
+      background-image: url("../img/facebook-icon.png");
+      width: 12px;
+      height: 23px; }
+      .footer-1 .list-social .icon-facebook:active, .footer-1 .list-social .icon-facebook:focus {
+        background-image: url("../img/facebook-icon-white.png"); }
+    .footer-1 .list-social .icon-youtube {
+      background-image: url("../img/youtube-icon.png");
+      width: 21px;
+      height: 25px; }
+      .footer-1 .list-social .icon-youtube:active, .footer-1 .list-social .icon-youtube:focus {
+        background-image: url("../img/youtube-icon-white.png"); }
 
 .footer-2 {
   background-color: #216ddf;
@@ -653,6 +670,23 @@ input:focus:invalid {
       width: 47.50%;
       margin-right: 2.5%; } }
 @media screen and (min-width: 785px) {
+  .footer-1 .logo, .header-2 .logo {
+    transition: all .25s ease; }
+    .footer-1 .logo:hover, .header-2 .logo:hover {
+      transition: all .25s ease;
+      opacity: .5; }
+
+  .footer-1 .list-social a {
+    transition: all .25s ease; }
+    .footer-1 .list-social a:hover {
+      transition: all .25s ease; }
+      .footer-1 .list-social a:hover .icon-twitter {
+        background-image: url("../img/twitter-icon-white.png"); }
+      .footer-1 .list-social a:hover .icon-facebook {
+        background-image: url("../img/facebook-icon-white.png"); }
+      .footer-1 .list-social a:hover .icon-youtube {
+        background-image: url("../img/youtube-icon-white.png"); }
+
   .card .btn-contact-form:hover {
     transition: all .25s ease;
     background-color: #0bc9c8;
