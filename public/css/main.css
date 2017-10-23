@@ -823,7 +823,7 @@ input:focus:invalid {
       margin-left: 2em; }
       .filter-bar .checkboxes-filter li {
         width: 24%; } }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1500px) {
   .filter-bar {
     margin-left: 0;
     margin-right: 0; }
